@@ -1,0 +1,47 @@
+recommend reading first, then video lessons (python for financial data science, tools & skills + live sessions potentially
+
+wk01
+reading material
+Finance with Python Chs 1-3  Python for Algo Trading Ch 1=OK Python for Finance Chs 1-2 OK=ch1
+
+wk02
+Finance with Python Chs 4-6 Python for Algo Trading Ch 2 Python for Finance Chs 3 
+
+wk03
+Python for Algo Trading Ch 3 Python for  algo trading app ??  python for finance ch 4
+
+wk04
+Python for Algo Trading Ch 3   python for finance ch 5
+
+wk05
+Python for Algo Trading Ch 4   python for finance ch 6
+
+wk06
+Python for Algo Trading Ch 6   python for finance ch 7-8
+ 
+wk07
+Python for Algo Trading Ch 5   python for finance ch 9
+
+wk08
+Python for Algo Trading Ch 5   python for finance ch 10
+
+wk09
+Python for Algo Trading Ch 7   python for finance ch 11-12
+ 
+wk10
+Python for Algo Trading Ch 8-9  python for finance ch 13 & App
+
+wk11
+Python for Algo Trading Ch 10-11  python for finance ch 13 
+
+wk12
+automation
+Python for Algo Trading Ch 12   
+(live: natural language processing 02)
+
+wk13:  backtesting & 1 day live trading practice module
+
+wk14 1 week live trading practice module
+
+wk15-16  finanl project preparation
+

@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a1531f0d-3359-4cec-912e-9b6ec0874d1c" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/ualds$Nosetests_in_L3SearchQuizes_py.coverage" NAME="Nosetests in L3SearchQuizes.py Coverage Results" MODIFIED="1539876636760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ualds$L3SearchQuizes.coverage" NAME="L3SearchQuizes Coverage Results" MODIFIED="1539936619945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/L3_search_sort" />
+    <SUITE FILE_PATH="coverage/ualds$L3BinarySearch.coverage" NAME="L3BinarySearch Coverage Results" MODIFIED="1539936643538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/L3_search_sort" />
+    <SUITE FILE_PATH="coverage/ualds$linkedList.coverage" NAME="linkedList Coverage Results" MODIFIED="1539784080424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ualds$LinkedStack.coverage" NAME="LinkedStack Coverage Results" MODIFIED="1539791014765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ualds$L2CollectionQuizes.coverage" NAME="L2CollectionQuizes Coverage Results" MODIFIED="1539797240922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ualds$syntax.coverage" NAME="syntax Coverage Results" MODIFIED="1539935623049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ualds$L3Quicksort.coverage" NAME="L3Quicksort Coverage Results" MODIFIED="1539936808294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/L3_search_sort" />
+    <SUITE FILE_PATH="coverage/ualds$Nosetests_in_linkedList_py.coverage" NAME="Nosetests in linkedList.py Coverage Results" MODIFIED="1539772786604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ualds$L6GraphTraversal.coverage" NAME="L6GraphTraversal Coverage Results" MODIFIED="1540830783391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/L6-graphs" />
+    <SUITE FILE_PATH="coverage/ualds$L4Quizes.coverage" NAME="L4Quizes Coverage Results" MODIFIED="1539948020095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/L4_maps_hashing" />
+    <SUITE FILE_PATH="coverage/ualds$LinquedQueue.coverage" NAME="LinquedQueue Coverage Results" MODIFIED="1539936329120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ualds$L6Graph_practice.coverage" NAME="L6Graph_practice Coverage Results" MODIFIED="1540391053067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/L6-graphs" />
+    <SUITE FILE_PATH="coverage/ualds$L5BinaryTreePreorderSearch.coverage" NAME="L5BinaryTreePreorderSearch Coverage Results" MODIFIED="1540124887261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/L5_trees" />
+    <SUITE FILE_PATH="coverage/ualds$HashTable.coverage" NAME="HashTable Coverage Results" MODIFIED="1539946619255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/L4_maps_hashing" />
+    <SUITE FILE_PATH="coverage/ualds$LinkedQueueTest.coverage" NAME="LinkedQueueTest Coverage Results" MODIFIED="1539936608462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/L2_list_collectons" />
+    <SUITE FILE_PATH="coverage/ualds$L5BST.coverage" NAME="L5BST Coverage Results" MODIFIED="1540214712140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/L5_trees" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="L3Quicksort.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/L3_search_sort/L3Quicksort.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1598">
+              <caret line="94" selection-start-line="94" selection-end-line="95" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LinkedQueue.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/L2_list_collectons/LinkedQueue.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1224">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
+              <folding>
+                <element signature="e#1#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="L5BinaryTreePreorderSearch.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/L5_trees/L5BinaryTreePreorderSearch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="L6Graph_practice.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/L6-graphs/L6Graph_practice.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2023">
+              <caret line="119" column="31" selection-start-line="119" selection-start-column="31" selection-end-line="119" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="L6GraphTraversal.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/L6-graphs/L6GraphTraversal.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>sef</find>
+      <find>node_names</find>
+      <find>get_adjacency_list_names</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/basic_syn.py" />
+        <option value="$PROJECT_DIR$/syntax.py" />
+        <option value="$PROJECT_DIR$/linkedList.py" />
+        <option value="$PROJECT_DIR$/Empty.py" />
+        <option value="$PROJECT_DIR$/L2CollectionQuizes.py" />
+        <option value="$PROJECT_DIR$/LinkedStack.py" />
+        <option value="$PROJECT_DIR$/L3SearchQuizes.py" />
+        <option value="$PROJECT_DIR$/LinquedQueue.py" />
+        <option value="$PROJECT_DIR$/LinkedQueueTest.py" />
+        <option value="$PROJECT_DIR$/LinkedQueue.py" />
+        <option value="$PROJECT_DIR$/L3Quicksort.py" />
+        <option value="$PROJECT_DIR$/L3BinarySearch.py" />
+        <option value="$PROJECT_DIR$/L2_list_collectons/LinkedQueue.py" />
+        <option value="$PROJECT_DIR$/tests/LinkedQueueTest.py" />
+        <option value="$PROJECT_DIR$/L2_list_collectons/LinkedQueueTest.py" />
+        <option value="$PROJECT_DIR$/L4_maps_hashing/HashTable.py" />
+        <option value="$PROJECT_DIR$/L4_maps_hashing/L4Quizes.py" />
+        <option value="$PROJECT_DIR$/L5_trees/L5BinaryTreePreorderSearch.py" />
+        <option value="$PROJECT_DIR$/L5_trees/L5BST.py" />
+        <option value="$PROJECT_DIR$/L6-graphs/L6Graph_practice.py" />
+        <option value="$PROJECT_DIR$/L6-graphs/L6GraphTraversal.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="149" />
+    <option name="y" value="313" />
+    <option name="width" value="1094" />
+    <option name="height" value="754" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ualds" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ualds" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ualds" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ualds" type="462c0819:PsiDirectoryNode" />
+              <item name="L6-graphs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ualds" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="ualds" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/L3_search_sort" />
+      <recent name="$PROJECT_DIR$/L2_list_collectons" />
+      <recent name="$PROJECT_DIR$/L1_intro" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.L6GraphTraversal">
+    <configuration name="L4Quizes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ualds" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/L4_maps_hashing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/L4_maps_hashing/L4Quizes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="L5BST" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ualds" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/L5_trees" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/L5_trees/L5BST.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="L5BinaryTreePreorderSearch" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ualds" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/L5_trees" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/L5_trees/L5BinaryTreePreorderSearch.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="L6GraphTraversal" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ualds" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/L6-graphs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/L6-graphs/L6GraphTraversal.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="L6Graph_practice" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ualds" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/L6-graphs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/L6-graphs/L6Graph_practice.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.L4Quizes" />
+      <item itemvalue="Python.L5BinaryTreePreorderSearch" />
+      <item itemvalue="Python.L5BST" />
+      <item itemvalue="Python.L6Graph_practice" />
+      <item itemvalue="Python.L6GraphTraversal" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.L6GraphTraversal" />
+        <item itemvalue="Python.L6Graph_practice" />
+        <item itemvalue="Python.L5BST" />
+        <item itemvalue="Python.L5BinaryTreePreorderSearch" />
+        <item itemvalue="Python.L4Quizes" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a1531f0d-3359-4cec-912e-9b6ec0874d1c" name="Default" comment="" />
+      <created>1538475929557</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1538475929557</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Nosetests_in_linkedList_py - 2018.10.09 at 11h 27m 47s.xml">
+      <configuration name="Nosetests in linkedList.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_linkedList_py - 2018.10.09 at 11h 28m 20s.xml">
+      <configuration name="Nosetests in linkedList.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_linkedList_py - 2018.10.09 at 11h 28m 45s.xml">
+      <configuration name="Nosetests in linkedList.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_linkedList_py - 2018.10.09 at 11h 29m 47s.xml">
+      <configuration name="Nosetests in linkedList.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_linkedList_py - 2018.10.09 at 11h 30m 32s.xml">
+      <configuration name="Nosetests in linkedList.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_linkedList_py - 2018.10.09 at 11h 32m 00s.xml">
+      <configuration name="Nosetests in linkedList.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_linkedList_py - 2018.10.17 at 12h 39m 49s.xml">
+      <configuration name="Nosetests in linkedList.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_L3SearchQuizes_py - 2018.10.18 at 12h 12m 04s.xml">
+      <configuration name="Nosetests in L3SearchQuizes.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_L3SearchQuizes_py - 2018.10.18 at 12h 12m 12s.xml">
+      <configuration name="Nosetests in L3SearchQuizes.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_L3SearchQuizes_py - 2018.10.18 at 17h 30m 37s.xml">
+      <configuration name="Nosetests in L3SearchQuizes.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="149" y="313" width="1094" height="754" extended-state="0" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24840765" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49162862" visible="true" weight="0.30988592" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.5083714" side_tool="true" visible="true" weight="0.30988592" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39483067" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26721764" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19493008" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.396687" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="17" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/L3_search_sort/L3Quicksort.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="94" selection-start-line="94" selection-end-line="95" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L2_list_collectons/LinkedQueue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+          <folding>
+            <element signature="e#1#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L5_trees/L5BinaryTreePreorderSearch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L6-graphs/L6GraphTraversal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L6-graphs/L6Graph_practice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2023">
+          <caret line="119" column="31" selection-start-line="119" selection-start-column="31" selection-end-line="119" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

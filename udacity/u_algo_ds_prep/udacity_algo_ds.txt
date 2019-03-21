@@ -1,0 +1,45 @@
+udacity  algo & data structures lessons
+
+a starting place 
+
+
+chap BitO notation
+
+    O(n), O(1), O(n^2), O(n*m), O(n*log(n)), O(n*sqrt(n))
+
+    worst case scenario
+    best case scenario
+    averae ase scenario
+
+    big O for time complexity
+    big O for space complexity( storage)
+
+
+chap collections 
+    collection does not have an order
+    cannot get 3rd element from collection as there is no defined order
+    collection can have elements of different types
+    many data structures extend collections
+
+
+    list 
+        can have different types
+        order does not mean much 
+
+        array (most common implementation of a list)
+            has some type of elements (in some languages)
+            array has a fixed length (in some languages)
+            each array has index to locate elements  [0 to n-1]
+            to access an element with known index is very efficient
+            insertion/deletion is difficult if element is put in the middle, worst case: O(n) (need to move els)
+
+            python list:
+                insertion: O(n), accessing len(): O(1)
+
+            each elment stores a value and an index
+        linked list 
+            each element stores   a value and a pointer (reference) to a next element     
+            insertion/ deletion O(1)
+            single linked list 
+            doubly linked list 
+            

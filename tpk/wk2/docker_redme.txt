@@ -1,0 +1,54 @@
+#docker ops howto
+==================
+docker build -t pyalgo:basic img_miniconda  #build a docker image 
+
+docker images  # to list images
+docker image ls
+
+#to run the image
+docker run -ti pyalgo:basic
+
+this docker started ipyhon   quit() exists the container
+C-p C-q  detaches from a container
+docker ps  # shows current running docker containerso
+
+docker attach $CONTAINER_ID
+
+docker stop $CONTAINER_ID
+
+
+deploy image in the cloud
+==========================
+goal : set up a droplet on digitalocen with a list of python packages  + ssl encrypted jupyter notebok install 
+
+list of files needed:
+setup.sh   # orchestrates all stes for the droplet setup
+install.sh  #docker image install
+jupyter_notebook_config.py #config setup for jupyter
+~/../s/pyalgo_docker0/cert.key  cert.pem  #SSL certificate
+
+##to create a self generated rsa key with openssl 
+openssl req -x509 -nodes -days 365 -newkey rsa:1024 -out cert.pem -keyout cert.key
+
+##how to generate the hash for a password
+python
+from notebook.auth import passwd
+passwd('yourpwd')
+
+create a digital ocean droplet , add ssh public key from your workstation, then
+> bash setup.sh ${DROPLET_PUBLIC_IP}
+
+after the scrip finishes  you can connect to protected jupyter
+https://${DROPLET_PUBLIC_IP}:8888  
+
+
+install_gcp.sh  is the installation script on the gcp vm instance
+
+#### initial git setup
+git config --global user.email johndoe@example.com
+git config credential.helper store
+git push https://github.com/slzdevsnp/learn.git
+git config --global credential.helper "cache --timeout 864000"
+
+## end of git initial setup
+

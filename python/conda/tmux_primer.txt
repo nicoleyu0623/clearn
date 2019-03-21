@@ -1,0 +1,7 @@
+
+>tmux  # opens 1 window
+
+C-b  %   # splits into 2 panes
+C-b arrow write   or C-b  arrow left  moves between 2 panes
+
+C-d  # closes current pane 

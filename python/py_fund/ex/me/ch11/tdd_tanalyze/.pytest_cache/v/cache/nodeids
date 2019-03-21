@@ -1,0 +1,7 @@
+[
+  "text_analyzer.py::TextAnalysisTest::test_character_count",
+  "text_analyzer.py::TextAnalysisTest::test_function_runs",
+  "text_analyzer.py::TextAnalysisTest::test_line_count",
+  "text_analyzer.py::TextAnalysisTest::test_no_deletion",
+  "text_analyzer.py::TextAnalysisTest::test_no_such_file"
+]
