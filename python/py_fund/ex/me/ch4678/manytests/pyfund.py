@@ -535,8 +535,8 @@ def test_ch8_iterables_generators():
             seen.add(item)
 
 
-    print('testing generator take() on list [11,12,13,14,15] ')
-    print(list(take(3, [11,12,13,14,15])))
+    print('testing generator take() on list [11,12,13,14,15,16] ')
+    print(list(take(4, [11,12,13,14,15,16])))
     print('testing generator distinct() on list [11,11,12,13,14,15,11,12]')
     print(list(distinct([11,11,12,13,14,15,11,12])))
 
@@ -651,8 +651,8 @@ def main():
     #test_ch6_collections_set()
     #test_ch8_iterables_comprehensions()
     #test_ch8_iterables_iter()
-    test_ch8_iterables_generators()
-    #test_ch8_iterables_itertools()
+    #test_ch8_iterables_generators()
+    test_ch8_iterables_itertools()
 
     #test_ch10_files_basic_read_write()
 
