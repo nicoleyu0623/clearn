@@ -16,7 +16,7 @@ ch6 collections
 ch7 handling exceptions
 ch8 iterables
 ch9 classes
-ch10 files and ressource mgmt
+ch10 files and resource mgmt
 ch11 shipping working and maintanable code
 #############################################
 
@@ -856,6 +856,11 @@ ch10 files and ressource mgmt
         check how fridge closes after the exception with fried pizza was raised!
 
 ch11 shipping working and maintanable code
+    ! demo project me/ch11
+
+    !! demo project tdd_tanalyze  text_analyzer.py
+      contains class TextAnalysisTest(unittest.TestCase):
+       which tests different exeuction of global function analyze_text()
     * unittest  module
         unit tests
         integration tests
@@ -866,7 +871,6 @@ ch11 shipping working and maintanable code
         assertions
         acceptance tests
 
-    !! demo project tdd_tanalyze  text_analyzer.py
 
        spec  for a function which opens a file
        and analyzes its contents
@@ -874,10 +878,13 @@ ch11 shipping working and maintanable code
         before writing the business function
 
     * the PDB  debugger
+    in ch11 project start Terminal
+    python
     >>> import pdb
     >>> pdb.set_trace()
-    >>>help
+    (pdb)help
 
+    ### launch a python file with a pdb debugger
     >python3 -m pdb palindrome.py
     (pdb) where   # shows the current line
     (pdb) next
@@ -886,36 +893,44 @@ ch11 shipping working and maintanable code
     (pdb) Ctrl-C
     (pdb) list
 
-    * virtual environments
-         ligt-weight self contained  python installation
+    in file put before where the code  in digits func stack
+    import pdb; pdb.set_trace()
+    run
+    >python3  palindrome/palindrome.py
+    debug it around , fix hte big  x = mod => x = div
+
+
+     ######## debugging finished 
+     ########## packaging the code #####
+     synopsis: we will create a package in a virtual env
+
+     /usr/local/bin/python3 -m virtualenv ~/venv/palindrome_env
+     source ~/ven/palindrome_env/bin/activate
     
-    python -m venv
-    ## do not need system admin rights
+     mkdir palindrome_proj
+     cp palindrome.py  palindrome_proj
 
-    #### create a virtual env named venv3
-    >/usr/local/bin/python3 -m venv venv3
-    ##activate it
-    >source venv3/bin/activate  #this makes python3 from the venv3 install
-
-    in a project dir create setup.py
+    in a palindrome_rpoj create setup.py
 
     setup.py  has setup() function
-
-    ! demo ex/me/ven3
-
-    in the same project folder, create a venv dir
-    >/usr/local/bin/python3 -m venv palindrom_env
-    >source palindrom_env/bin/activate
+    
+    ! demo ex/me/making_pkg/palindrome_proj
+    ==== installing with install ======
+    >cd palindrome_rpoj
     >python setup.py install
-    ## this copies palindrome.py into the venv/lib/python3/site-packages
+    ## this copies palindrome.py into the ~/venv/palindrome_env/lib/python3/site-packages
+    >pip list (will show now that palindrome package is isntalled)
+   
+    #testing importing
     >cd ..
     >python
     >>>import palindrome
     >>>palindrome.__file__  #shows the path to the package file
-
-    * packaging with sdist
+   
+    ====== packaging with sdist (for redistribution) ========
 
     from the project source folder
+    >python setup.py sdist  #creates a targ.gz in dist folder
     >python setup.py sdist --format zip
     >ls dist
     apple$ unzip -l dist/palindrome-1.0.zip
@@ -929,8 +944,8 @@ ch11 shipping working and maintanable code
 
    >python setup.py sdist --help-formats
    >python setup.py --help
-
-
+   no you can send this tar.gz to anybody outside
+  
    !demo  me/making_pkg  # python-apprentice: Appendix B
 
 

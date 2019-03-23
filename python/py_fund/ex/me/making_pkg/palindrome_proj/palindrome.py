@@ -1,5 +1,6 @@
 import unittest
 
+
 def digits(x):
     """Convert an integer into a list of digits.
 
@@ -8,18 +9,17 @@ def digits(x):
 
     Returns: A list of the digits, in order, of ``x``.
 
-    >>> digits(4586378)
+    #>>> digits(4586378)
     [4, 5, 8, 6, 3, 7, 8]
     """
-
-    #      ###############################################################
+    ######################################################################
     #import pdb; pdb.set_trace()   #this sets  a breakpoint and pdb starts
-    #     ################################################################
+    #######################################################################
     digs = []
     while x != 0:
         div, mod = divmod(x, 10)
         digs.append(mod)
-        x = div   #right value is div, wrong value is mod
+        x = div
     return digs
 
 

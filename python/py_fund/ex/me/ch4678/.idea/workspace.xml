@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0533686b-6d00-48ff-9a1f-f35ff961d1cb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ch4678.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ch4678.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../py_beyond/nb/matplotlib_example.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manytests/pyfund.py" beforeDir="false" afterPath="$PROJECT_DIR$/manytests/pyfund.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -141,12 +139,12 @@
       <option name="presentableId" value="Default" />
       <updated>1538484956496</updated>
       <workItem from="1553345032621" duration="328000" />
-      <workItem from="1553345401099" duration="2702000" />
+      <workItem from="1553345401099" duration="2851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3030000" />
+    <option name="totallyTimeSpent" value="3179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="496" y="44" width="1168" height="1236" extended-state="0" />
@@ -156,7 +154,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49864253" visible="true" weight="0.29283217" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49864253" weight="0.29283217" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
