@@ -219,3 +219,48 @@ mplemented as directories containing a special __init__.py file
 they can have subpackages   i.e. creader/compressed
 packages have __path__ attribute
 
+
+ch 3 functions overview
+===========================
+
+##callable instances
+!demo resolver2
+python
+>>from resolver2 import resolver as res
+>>r = res.Resolver()
+>>> type(r)
+<class 'resolver2.resolver.Resolver'>
+>>> r('cern.ch')
+'188.184.9.234'
+
+### lambdas
+  ( are anonymous funcs)  they cannot be easily tested so must stay simple
+
+!demo lambdas.py
+>python lambdas.py
+
+>>>last_name = lambda name,sep=' ': name.split(sep)[-1]
+>>> type(last_name)
+<class 'function'>
+>>> last_name('Ivan Ivanov')
+'Ivanov'
+>>> last_name('Ivan/Ivanov','/')
+'Ivanov'
+
+## detecting callables
+>>> callable(last_name)
+True
+>>> callable('Ivanov')
+False
+>>>
+
+!demo func_extend_args.py
+>python func_extend_args.py
+
+hypervolume() to pass arbitrary number of params
+define a list of args in tuple before passing it to a func
+trace(f,*args, **kwargs)  demo
+zip_tranposed() demo
+
+
+
