@@ -1,2 +1,4 @@
 #idea projects
 .idea/
+.ipynb_checkpoints/
+__pycache__/

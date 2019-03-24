@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ceea2e67-6b67-4c66-9eb0-10e35d205be3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../python_fund_readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../python_fund_readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../py_beyond/wk/02-organize/creader/compressed/bzipped.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../py_beyond/wk/02-organize/creader/compressed/gzipped.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../py_beyond/wk/02-organize/reader/reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_beyond/nb/matplotlib_example.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_beyond/nb/matplotlib_example.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_beyond/py_beyond_readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_beyond/py_beyond_readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_beyond/wk/02-organize/reader/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_beyond/wk/02-organize/reader/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +31,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tdd_tanalyze/palindrome/palindrome.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
+            <state relative-caret-position="285">
               <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
             </state>
           </provider>
@@ -50,8 +56,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="41" />
-    <option name="y" value="613" />
+    <option name="x" value="-1415" />
+    <option name="y" value="-81" />
     <option name="width" value="1106" />
     <option name="height" value="668" />
   </component>
@@ -239,6 +245,7 @@
       <updated>1539783394110</updated>
       <workItem from="1553353873694" duration="697000" />
       <workItem from="1553354979087" duration="3098000" />
+      <workItem from="1553441323361" duration="19000" />
     </task>
     <servers />
   </component>
@@ -263,7 +270,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3795000" />
+    <option name="totallyTimeSpent" value="3814000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -275,10 +282,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="613" width="1106" height="668" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1415" y="-81" width="1106" height="668" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18515037" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18796992" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -294,12 +300,12 @@
       <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.39583334" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3290653" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3290653" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.3293578" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Coverage" order="5" side_tool="true" weight="0.3293578" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +334,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tdd_tanalyze/palindrome/palindrome.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
+        <state relative-caret-position="285">
           <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
         </state>
       </provider>
