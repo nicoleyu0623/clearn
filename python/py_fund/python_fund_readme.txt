@@ -963,7 +963,7 @@ ch11 shipping working and maintanable code
    installing nose with pip
    venv3> pip install nose
    >cd ../../palindrom
-   > nosetests palindrome.py
+   > nosetests palindrome.py  #to run all tests from command line
    >cd dist
    >pip install palindrome-1.0.zip  #installs palindrome into venv3
    >pip uninstall palindrome-1.0.zip

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ceea2e67-6b67-4c66-9eb0-10e35d205be3" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../../py_beyond/nb/matplotlib_example.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ch11.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ch11.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tdd_tanalyze/palindrome/palindrome.py" beforeDir="false" afterPath="$PROJECT_DIR$/tdd_tanalyze/palindrome/palindrome.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch4678/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4678/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../python_fund_readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../python_fund_readme.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tdd_tanalyze/palindrome/palindrome.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="31" />
+            <state relative-caret-position="161">
+              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -243,7 +238,7 @@
       <option name="presentableId" value="Default" />
       <updated>1539783394110</updated>
       <workItem from="1553353873694" duration="697000" />
-      <workItem from="1553354979087" duration="2515000" />
+      <workItem from="1553354979087" duration="3098000" />
     </task>
     <servers />
   </component>
@@ -268,7 +263,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3212000" />
+    <option name="totallyTimeSpent" value="3795000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -281,13 +276,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="613" width="1106" height="668" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18515037" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37772086" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3767361" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -332,8 +328,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tdd_tanalyze/palindrome/palindrome.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="161">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
         </state>
       </provider>
     </entry>
