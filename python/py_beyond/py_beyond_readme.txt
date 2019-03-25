@@ -305,7 +305,7 @@ a closur returns a function.
     demo_chain_decorator()   2 decorators applied in chain
     demo_decorator_on_class_method a decorator applied on instance method
 
-!demo noop-functools
+!demo noop-functools.py
     how to use @functools.wraps(f)  to maintain  f.__name__  f.__doc__
     important to use in decorators to make sure decoraed functions conserve
     their names and help message
@@ -316,20 +316,30 @@ a closur returns a function.
     do validation on multiple arguments
         demo_arg_valid_on_several_params()
 
-ch 05 properties and metnds
+ch 05 properties and class methods
 ==============================
 
-__init__()  #properties for class intances
 
-! demo properties_and_class_methods
+! demo props-class-methods subfolder
     shipping.py
+    shipping_runner.py
 
-    class attributes
+ -------------------------------------------------------------------------
+ !NB carefully study source in shipping.py for base and inherited objects
+ -------------------------------------------------------------------------
+  demo_BaseContainer()
+    shows base object is instantiable
+    specialized constructors realized in class methods
 
- @property for  getter  and @p.setter for setter
-enchaged chapter important for OO inheritance
+  demo_DerivedRefrigiratedContainer()
+    instantiation of Derived class
+    use of inherited class methods for special constructors even if signature changes
+    @property for  getter  and @p.setter for setter
+    getter and setter properties
+    property accessing its parent value
 
-
+  demo_DoubleDerivedHeatedRefrigeratedShippingContainer()
+    property setter accessing its parent value  (used for value validation )
 
 ch 06 strings and representations
 =================================
