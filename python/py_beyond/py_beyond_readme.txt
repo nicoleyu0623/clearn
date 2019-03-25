@@ -5,7 +5,7 @@ Pluralsight  Robert Smallshire, Austin Bingham
 
 
 chapters
-ch 
+ch
 01 prepreqs
 02 organizing larger programs
 03 beyond basic funcs
@@ -262,5 +262,95 @@ define a list of args in tuple before passing it to a func
 trace(f,*args, **kwargs)  demo
 zip_tranposed() demo
 
+
+ch 04 closures and decorators
+==============================
+
+!demo sort_by_last_letter.py
+ local funcs defined inside local funcs
+ !NB at every call  local func is redefined
+    demo_sort_by_last_let()
+ global, parameters and inner variables are accessible inside local funcs
+    demo_accessing_scopes_from_local_funcs()
+
+** closures **
+a closur returns a function.
+ most common pattern is a factory of specialized functions
+
+!demo raise_to_closure_factory.py
+    demo_factory_squares_cubes():
+    raise_to closure can produce different functions of raising argument
+    to different arguments
+
+!demo enclosing.py
+        demo_non_local_variable()
+        shows how a local function can modify a variable from higher scope
+        use of nonlocal keyword
+
+!demo  make_timer_nonlocal.py
+      more practical example of nonlocal to have independent timers
+
+
+!demo escape_unicode_decor_first.py
+    apply an ascii() decorator to functions which return strings
+
+!demo call_count_class_deco.py
+    counts the number of calls of a hello() function via CallCount class as decorator
+
+!demo tracer_instance_deco.py
+    debugs a call of a function with an instance decorator
+    easy switching off/on decorator tracing functionality  via instance attribute
+
+!demo island_maker_multideo.py
+    demo_chain_decorator()   2 decorators applied in chain
+    demo_decorator_on_class_method a decorator applied on instance method
+
+!demo noop-functools
+    how to use @functools.wraps(f)  to maintain  f.__name__  f.__doc__
+    important to use in decorators to make sure decoraed functions conserve
+    their names and help message
+
+!demo demo_argvalidation.py
+    perform function argument validation in a decorator
+        demo_func_with_arg_validation_via_deco()
+    do validation on multiple arguments
+        demo_arg_valid_on_several_params()
+
+ch 05 properties and metnds
+==============================
+
+__init__()  #properties for class intances
+
+! demo properties_and_class_methods
+    shipping.py
+
+    class attributes
+
+ @property for  getter  and @p.setter for setter
+enchaged chapter important for OO inheritance
+
+
+
+ch 06 strings and representations
+=================================
+
+string representatons of objects in python
+
+repr() for class debugging
+str() print uses str(object)
+
+reprlib  (prints a subset of huge element)
+
+ascii(),  ord(), chr()
+
+>>> ascii('hello¾')
+"'hello\\xbe'"
+
+>>> chr(190)
+'¾'
+>>> ord('¾')
+190
+
+duck  Table class example
 
 
