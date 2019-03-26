@@ -572,3 +572,10 @@ extended iter()  with ending_file.txt
 ! demo sensor.py
     infinite series by using iter()
     simulates data coming from a sensor  in  a stream
+
+
+ch 09 inheritance and subtype polymorphism
+==========================================
+
+__init__ in inherited class does not automatically call
+__init__ from a parent class

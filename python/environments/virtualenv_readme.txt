@@ -28,7 +28,7 @@ deactivate
 
 #see all available versions of requests package
 pip install requests==
-pip install requests=20.20.1 #install the previous to latest version
+pip install requests==20.20.1 #install the previous to latest version
 
 pip install --pre requests # to install a pre-released version
 
