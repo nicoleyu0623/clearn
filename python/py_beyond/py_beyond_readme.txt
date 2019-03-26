@@ -472,7 +472,6 @@ int(x,base) # base 2 to 36
 42
 
 
-datetime module
 (covers infinite calendar)
 types datetime, date, time timedelta timezone
 instances are immutable
@@ -491,3 +490,85 @@ instances are immutable
 ! demo collinearity/graphical/orientation.py
     change floats to Fractions -> get expected collinearity results
 
+ch 08 iterables and iteration
+==============================
+
+review of comprehensions
+    comprehesions with multiple sources
+    values.py  values2.py
+    nested comprehensions
+        values3.py
+iteration and iterables (functional style python)
+
+map() applies a func to each element in a sequence
+map() prduces lazy eval
+i.e. it returns an iterator object
+
+>>> m =map(lambda x:x*x, range(5))
+>>>m
+<map object at 0x10d380320>
+>>> [x for x in m]
+
+map acceps any number of input sequences. that number must match the number of function arguments
+>>>m=map(pow, range(3),[2]*3)  #pow(x,y)
+>>> [x for x in m]
+[0, 1, 4]
+
+filter() apply f to each element in an iterable series and skips those which don’t meet some criteria.
+>>> positives = filter(lambda x: x>0, [1,-5,0,6,-2,8])
+>>> [x for x in positives]
+[1, 6, 8]
+>>> trues = filter(None, [0,1,False,True,[],[1,2,3], '', 'hello'])
+>>> [x for x in trues]
+[1, True, [1, 2, 3], 'hello']
+
+diff between python 2 and 3 
+in python 2 map, reduce return lists not iterators
+
+functools.reduce() #repeteadly apply a func to the elements of a  a sequence reducing  them to a single value
+ 
+>>> def multipl(x,y):
+...     print('mul {} {}'.format(x,y))
+...     return x*y
+>>> from functools import *
+>>> reduce(multipl,range(1,10))
+mul 1 2
+mul 2 3
+mul 6 4
+mul 24 5
+mul 120 6
+mul 720 7
+mul 5040 8
+mul 40320 9
+362880 # output  == 1*2*3*4*5*6*7*8*9
+
+>>> reduce(multipl, [], 0)  # 0 - optional value returned by default if sequence is empty
+0
+! demo map_reduce.py
+    canonical example to compbeing word doc counts
+    from a list of documents
+    map() apply count_words() to each doc
+    reduce() combine those counts to a single dictionary
+
+
+iteration protocols
+iter()
+next()
+stopIteration
+__iter__() #need to implement
+iterator is an object which implements the iterable protocol
+
+! demo example_iterator.py
+implement simple iterator protocols
+
+
+!demo alt_iterable.py
+
+extended iter()
+iter(callable, sentinel)  #common use = create infinite sequences from existing functions
+extended iter()  with ending_file.txt 
+
+
+! demo sensor.py
+    infinite series by using iter()
+    simulates data coming from a sensor  in  a stream
