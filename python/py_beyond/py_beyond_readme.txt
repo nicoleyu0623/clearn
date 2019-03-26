@@ -344,6 +344,16 @@ ch 05 properties and class methods
 ch 06 strings and representations
 =================================
 
+    !demo point.py
+    demo_Point()
+        uses of str(obj), repr(obj)
+    repr() well suited for debugging, logging
+    good idea to always implement __repr__() in classes
+
+    str() is a readable human-friendly representation of an object
+    (not programmer oriented)
+
+
 string representatons of objects in python
 
 repr() for class debugging
@@ -363,4 +373,121 @@ ascii(),  ord(), chr()
 
 duck  Table class example
 
+07 numeric and scalar types
+===========================
+
+int # arbitrary precision in python
+    other languages 16, 32 64 bits precision
+float  64 bit precision  (double in C++, Java )
+1 bit - sign
+11 birs - exponent
+53 bits - fraction or mantissa
+i.e. python has 15 to 17 bits of decimal precision
+
+sys.float_nfo show limits of float type
+>>2**53
+>>float(2**53) # is the same
+>>float(2**53 + 1)  #not the same as 2**53 + 1
+
+read:  what every computer scientist should know about
+floating-point arithmetics
+
+
+problem with floats they are converted to base 2 representation
+
+
+decimal.Decimal type still a float but with base 10
+Decimal should be used in Financial code for
+any accounting calculations
+
+>>>import decimal
+>>> decimal.getcontext()
+#shows defautl precison at 28
+
+>>>from decimal import Decimal
+Decimal stores numbers in base 10
+>>Decimal(5)
+
+>>Decimal('0.8')
+>>> Decimal('0.8') - Decimal('0.7')
+Decimal('0.1')
+versus !
+>>> Decimal(0.8) - Decimal(0.7)
+Decimal('0.1000000000000000888178419700')
+always specify arg as string
+>>> decimal.getcontext().traps[decimal.FloatOperation]=True
+>>> Decimal(0.8)  #will now raise excdeption
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+decimal.FloatOperation: [<class 'decimal.FloatOperation'>]
+
+
+>>> Decimal('Infinity')
+>>> Decimal('-Infinity'
+>>> Decimal('NaN')
+
+>>> purchase = Decimal("20.44")
+>>> current = Decimal("80.25")
+>>> shares = 135
+>>> shares * purchase
+Decimal("2759.40")
+>>> shares * current
+Decimal("10833.75")
+>>> shares*(current-purchase)
+Decimal("8074.35")
+
+
+Fraction type
+
+complex type
+
+abs()
+round(0.2812,3)
+round(1.5)
+2
+round(2.5)
+2
+##base conversions
+bin() # base 2
+oct() # base 8
+hex() # base 16
+int(x,base) # base 2 to 36
+
+
+>>> 0b101010  #0b  base 2
+42
+>>> 0o52   # 0o base 8
+42
+>>> 0x2a   #0x base 16
+42
+>>> bin(42)
+'0b101010'
+>>> oct(42)
+'0o52'
+>>> hex(42)
+'0x2a'
+>>> int('42', base=10)
+42
+>>> int('2a', base=16)
+42
+
+
+datetime module
+(covers infinite calendar)
+types datetime, date, time timedelta timezone
+instances are immutable
+! demo datetime-demo.py
+    demo_datetime_date()
+    demo_datetime_time()
+    demo_datetime_datetime()
+    demo_timedelta()
+    demo_timezone()
+
+! demo collinearity/textual/orientation.py
+
+    shows how rounding errors in floats can affect geometric
+    assumptions on collinearity
+
+! demo collinearity/graphical/orientation.py
+    change floats to Fractions -> get expected collinearity results
 
