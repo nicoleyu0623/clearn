@@ -6,12 +6,12 @@ def banner(message, border="-"):
     print(line)
 
 
-def starprint(message,stars=2):
-        mstars = '*' * stars
+def starprint(message, nstars=2, starchar='*'):
+        mstars = starchar * nstars
         ending = ''
-        if stars == 4:
+        if nstars == 4:
                 ending = '!'
         newline = ''
-        if stars == 2:
+        if nstars == 2:
                 newline='\n'
         print(newline,mstars,message,ending)

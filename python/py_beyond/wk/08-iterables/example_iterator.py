@@ -26,11 +26,11 @@ class ExampleIterable:
 import os
 import sys
 from pprint import pprint as pp
+from util import *
 
 pd=os.path.dirname(os.getcwd())
 ppd=os.path.dirname(pd)
 sys.path.extend([pd,ppd])
-from util import *
 
 
 def demo_ExampleIterator():

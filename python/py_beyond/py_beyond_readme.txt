@@ -22,6 +22,7 @@ ch
 ==================
 
 
+===========================
 ch 2 organize larger progs
 ===========================
 python
@@ -263,6 +264,7 @@ trace(f,*args, **kwargs)  demo
 zip_tranposed() demo
 
 
+==============================
 ch 04 closures and decorators
 ==============================
 
@@ -316,8 +318,10 @@ a closur returns a function.
     do validation on multiple arguments
         demo_arg_valid_on_several_params()
 
+
+===================================
 ch 05 properties and class methods
-==============================
+==================================
 
 
 ! demo props-class-methods subfolder
@@ -341,6 +345,7 @@ ch 05 properties and class methods
   demo_DoubleDerivedHeatedRefrigeratedShippingContainer()
     property setter accessing its parent value  (used for value validation )
 
+==================================
 ch 06 strings and representations
 =================================
 
@@ -373,6 +378,7 @@ ascii(),  ord(), chr()
 
 duck  Table class example
 
+===========================
 07 numeric and scalar types
 ===========================
 
@@ -490,6 +496,7 @@ instances are immutable
 ! demo collinearity/graphical/orientation.py
     change floats to Fractions -> get expected collinearity results
 
+==============================
 ch 08 iterables and iteration
 ==============================
 
@@ -574,8 +581,50 @@ extended iter()  with ending_file.txt
     simulates data coming from a sensor  in  a stream
 
 
+==========================================
 ch 09 inheritance and subtype polymorphism
 ==========================================
+!demo base.py
 
-__init__ in inherited class does not automatically call
-__init__ from a parent class
+!demo sorted_list.py
+    __init__ in inherited class does not automatically call
+        it shoudl be specified explicitely !
+    how derived are instantiated.
+    how methods are resolved
+
+!demo  sorted_list_demo.py
+
+ sorted_list.py
+
+ object
+ |
+ SimpleList -----|
+ |               |
+ SortedList    IntList
+        |        |
+       SortedIntList
+
+    demo_sorted_list()
+    demo_int_list()
+    demo_multple_inheritance_list()
+        show how method resolved with __mro__
+    demo_diamond_mro_basic()
+        show how method resolved with __mro__
+    demo_super_sortedInstList()
+        show how super
+
+__mro__ is calculated with C3 algorithm:
+    1. A C3 MRO ensures that subclasses come before their base-classes.
+    2. C3 ensures that the base-class order as defined in a class definition is also preserved.
+    3. C3 preserves the first two qualities independent of where in an inheritance graph you
+       calculate the MRO. In other words, the MROs for all classes in a graph agree with respect to relative class order.
+
+
+super()  #returns a super-proxy obj
+bound and unbound proxies
+bound in detail
+
+sortedList explained !
+
+object() as ultimate base class
+dir(object) #to see all object attributes
