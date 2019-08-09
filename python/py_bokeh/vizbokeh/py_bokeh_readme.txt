@@ -39,9 +39,9 @@ ch6 Embedding Bokeh Plots in WebSites
 ch7 Deploying Bokeh Data Visualization Apps in Live Servers
 =============================================================
 
-
+-------------------
 ch1 getting started
-
+--------------------
     bokeh in  Interactive jupyter session bug
 
     1. instead of show(f) use save(f) to overwrite your plot, not to append it
@@ -50,8 +50,10 @@ ch1 getting started
     official doc   bokeh.pydata.org
     complete API: Refererence Guide !
 
+----------------------------
+ch2 Customizing Bokeh Graphs
+----------------------------
 
-ch2 
     nb/ch2/iris_styling.ipynb
     f.background_fill_color="#BFEBBB"  #can use rgb picker
 
@@ -61,8 +63,9 @@ ch2
 
    ch2_iris.styling.py    styles, axes, ticks, colors,  color of data, alpha, legend
 
-
-ch3
+--------------------
+ch3 Advanced Plotting
+--------------------
     columnDataSource (needed for hoover and used to draw glyphs)
     hovertools customized with data  (iris)
     layout multiple plots
@@ -70,20 +73,33 @@ ch3
     box_annotations (rectangles)
     labels for specific glyphs  ch3_categorical_labels.py
 
-ch4
+----------------------------------------------------------
+ch4 Boker Server: Interactive Plotting with HTML Widgets
+----------------------------------------------------------
+
     bokeh server
     >python -m bokeh serve widgets.py  #basic example
-    >bokeh server widgets.py
-    >bokeh server --port 5007 dyn_chart_labels_select.py
+    >bokeh serve widgets.py
+    >bokeh serve --port 5007 dyn_chart_labels_select.py
+
+    >server zimine$ bokeh serve --disable-index-redirect  --port 5006 \
+       --allow-websocket-origin=127.0.0.1:5006  dyn_slyder_labels.py
+           filters dta on slider vales, chnages labels
     selecgt_span_ex8Sol how to dynamically compute values of Select UI
 
-ch5 
+-------------------------------------------
+ch5 Boker Server: Streaming Real Time Data
+-------------------------------------------
+
     streaming in bokeh server
     random_generator_chart.py
     bitcoin_stream-webscrap.py
     bitcoint_stream_widgets.py
 
-ch6
+-------------------------------------
+ch6 Embedding Bokeh Plots in WebSites
+-------------------------------------
+
     venv/bokeh/bin/pip3 install Flask
     ch6_inflask    flaskapp0    python flaskapp0/app.py how to embed a basic line chart (this starts the flask web server)
 
@@ -92,7 +108,7 @@ ch6
     #  flask runs on 5000
     bokeh serve  --allow-websocket-origin=localhost:5000   random_generator.py  
     python app.py  # runs on port 5000 
-    (flask must also be runnig, user access  localhost:500)
+    (flask must also be running, user access  localhost:500)
 
 
     
@@ -103,8 +119,10 @@ ch6
     #to run the server
     python manage.py runserver 
 
+-----------------------------------------------------------
+ch7 Deploying Bokeh Data Visualization Apps in Live Servers
+-----------------------------------------------------------
 
-ch7
  copied flaskapp0  from ch6
  made account of on digitalocean.com 
  droplet 5/mo   1gb/1cpu 25 gb ssd  1000 gb network

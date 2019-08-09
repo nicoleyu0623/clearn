@@ -597,12 +597,12 @@ ch 09 inheritance and subtype polymorphism
  sorted_list.py
 
  object
- |
+    |
  SimpleList -----|
- |               |
+    |            |
  SortedList    IntList
         |        |
-       SortedIntList
+      SortedIntList
 
     demo_sorted_list()
     demo_int_list()
@@ -628,3 +628,92 @@ sortedList explained !
 
 object() as ultimate base class
 dir(object) #to see all object attributes
+
+
+
+==========================================
+ch 10 implementing collections,
+==========================================
+
+improving performance  usage of timeit
+
+
+==========================================
+ch 11 exception and errors
+==========================================
+
+exception hierarchy:
+------------------
+BaseException
++— SystemExit
++— Keyboardlnterrupt
++— GeneratorExit
++— Exception
+    +— SyntaxError
+    |    +— IndentationError
+    |    +— TabError
+    +— SystemError
+    +— TypeError
+    +— ValueError
+    |   +— UnicodeError
+    |       +— UnicodeDecodeError
+    |       +— UnicodeEncodeError
+    |       +— UnicodeTranslateError
+    +— Warning
+        +— DeprecationWarning
+        +— PendingDeprecationWarning
+        +— RuntimeWarning
+        +— SyntaxWarning
+        +— UserWarning
+        +— FutureWarning
+        +— ImportWarning
+        +— UnicodeWarning
+        +— BytesWarning
+        +— ResourceWarning
+
+    +— Stoplteration
+    +— ArithmeticError
+        +— FloatingPointError
+        +— OverflowError
+        +— ZeroDivisionError
+    +— AssertionError
+    +— AttributeError
+    +— BufferError
+    +— EOFError
+    +— ImportError
+    +— LookupError
+        +— IndexError
+        +— KeyError
+    +— MemoryError
+    +— NameError
+        +— UnboundLocalError
+    +— OSError
+        +— BlockinglOError
+        +— ChildProcessError
+        +— ConnectionError
+            +— BrokenPipeError
+            +— ConnectionAbortedError
+            +— ConnectionRefusedError
+            +— ConnectionResetError
+        +— FileExistsError
+        +— FileNotFoundError
+        +— InterruptedError
+        +— IsADirectoryError
+        +— NotADirectoryError
+        +— PermissionError
+        +— ProcessLookupError
+        +— TimeoutError
+    +— ReferenceError
+    +— RuntimeError
+        +— NotlmplementedError
+
+
+
+
+==========================================
+ch 12 definting context managers,
+==========================================
+
+==========================================
+ch 13 introspection
+==========================================

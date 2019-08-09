@@ -2,7 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0533686b-6d00-48ff-9a1f-f35ff961d1cb" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../../dquest/trds/s2/2_15_pandas_groupby.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../dquest/trds/s2/2_15_pandas_groupby.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../py_beyond/py_beyond_readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_beyond/py_beyond_readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/py_bokeh_readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/.idea/proj.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/.idea/proj.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch2-style/ch2_iris_styling_Ex3Sol.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch2-style/ch2_iris_styling_Ex3Sol.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch2-style/ch2_stugents_categorical.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch2-style/ch2_stugents_categorical.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch4_server/select_span_Ex8Sol.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch4_server/select_span_Ex8Sol.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch4_server/widgets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch4_server/widgets.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch4_server/widgets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/BasicGraph.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/BasicGraph.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/data_csv_women.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/data_csv_women.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/data_csv_womens.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/line.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/line_from_csv.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/line_from_csv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/qline.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/qline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch2/iris_ex3sol.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch2/iris_ex3sol.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch2/iris_styling.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch2/iris_styling.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch2/students.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch2/students.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch3/ch3_iris_columnar_datasource.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch3/ch3_iris_columnar_datasource.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch3/iris_nb.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch3/iris_nb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch10/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch10/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manytests/exceptional.py" beforeDir="false" afterPath="$PROJECT_DIR$/manytests/exceptional.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,12 +39,53 @@
     <SUITE FILE_PATH="coverage/ch4678$pyfund.coverage" NAME="pyfund Coverage Results" MODIFIED="1553346341918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/manytests" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manytests/pyfund.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="561">
+              <caret line="136" column="35" selection-start-line="136" selection-start-column="31" selection-end-line="136" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manytests/words.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manytests/ooairtravelrunner.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" selection-start-line="30" selection-end-line="31" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/manytests/ooairtravel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="75" column="60" selection-start-line="75" selection-start-column="60" selection-end-line="75" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manytests/keypress.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manytests/exceptional.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1380">
+              <caret line="92" selection-start-line="92" selection-end-line="92" />
             </state>
           </provider>
         </entry>
@@ -33,6 +98,7 @@
       <find>generator</find>
       <find>yield</find>
       <find>_seating</find>
+      <find>for</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -42,14 +108,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/manytests/pyfund.py" />
+        <option value="$PROJECT_DIR$/manytests/exceptional.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1362" />
-    <option name="y" value="-565" />
-    <option name="width" value="1168" />
-    <option name="height" value="777" />
+    <option name="x" value="1304" />
+    <option name="y" value="603" />
+    <option name="width" value="1205" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -58,6 +125,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -74,7 +142,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -165,16 +232,22 @@
       <workItem from="1553345032621" duration="328000" />
       <workItem from="1553345401099" duration="2851000" />
       <workItem from="1553453806355" duration="1399000" />
+      <workItem from="1553855417562" duration="657000" />
+      <workItem from="1557149796524" duration="205000" />
+      <workItem from="1557156174797" duration="1922000" />
+      <workItem from="1557198705942" duration="2000" />
+      <workItem from="1559905930012" duration="900000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4578000" />
+    <option name="totallyTimeSpent" value="8264000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1362" y="-565" width="1168" height="777" extended-state="0" />
+    <frame x="1304" y="603" width="1205" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.53768843" visible="true" weight="0.312611" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.53768843" visible="true" weight="0.32846087" />
       <window_info id="Structure" order="1" sideWeight="0.46231157" side_tool="true" weight="0.30195382" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -204,9 +277,28 @@
     <entry file="file://$PROJECT_DIR$/manytests/scopes.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/manytests/pyfund.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="136" column="35" selection-start-line="136" selection-start-column="31" selection-end-line="136" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/manytests/exceptional.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1800" />
+        <state relative-caret-position="1380">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manytests/keypress.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manytests/words.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manytests/ooairtravelrunner.py">
@@ -218,15 +310,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/manytests/ooairtravel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manytests/pyfund.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="296">
+          <caret line="75" column="60" selection-start-line="75" selection-start-column="60" selection-end-line="75" selection-end-column="60" />
         </state>
       </provider>
     </entry>

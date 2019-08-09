@@ -1,44 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4c481c5-1236-4dc2-ac29-a9f5cdc3b5ce" name="Default" comment="" />
+    <list default="true" id="a4c481c5-1236-4dc2-ac29-a9f5cdc3b5ce" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../../dquest/trds/s2/2_15_pandas_groupby.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../dquest/trds/s2/2_15_pandas_groupby.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_beyond/py_beyond_readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_beyond/py_beyond_readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/py_bokeh_readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/.idea/proj.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/.idea/proj.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch2-style/ch2_iris_styling_Ex3Sol.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch2-style/ch2_iris_styling_Ex3Sol.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch2-style/ch2_stugents_categorical.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch2-style/ch2_stugents_categorical.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch4_server/select_span_Ex8Sol.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch4_server/select_span_Ex8Sol.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch4_server/widgets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch4_server/widgets.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/ch4_server/widgets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/BasicGraph.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/BasicGraph.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/data_csv_women.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/data_csv_women.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/data_csv_womens.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/line.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/line_from_csv.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/line_from_csv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/qline.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch1/qline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch2/iris_ex3sol.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch2/iris_ex3sol.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch2/iris_styling.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch2/iris_styling.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch2/students.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch2/students.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch3/ch3_iris_columnar_datasource.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch3/ch3_iris_columnar_datasource.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch3/iris_nb.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../py_bokeh/vizbokeh/nb/ch3/iris_nb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4678/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4678/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4678/manytests/exceptional.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4678/manytests/exceptional.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="tryfractalbmp.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/filehandle/tryfractalbmp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#77#119#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1384" />
-    <option name="y" value="206" />
+    <option name="x" value="60" />
+    <option name="y" value="46" />
     <option name="width" value="1119" />
     <option name="height" value="991" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -92,43 +97,50 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544377615027</updated>
+      <workItem from="1557150348733" duration="2084000" />
     </task>
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2084000" />
+  </component>
   <component name="ToolWindowManager">
-    <frame x="1384" y="206" width="1119" height="991" extended-state="0" />
-    <editor active="true" />
+    <frame x="60" y="46" width="1119" height="991" extended-state="0" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26462397" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="SciView" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2692665" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/filehandle/files.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/filehandle/tryfractalbmp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>

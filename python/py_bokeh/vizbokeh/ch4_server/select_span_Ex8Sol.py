@@ -5,6 +5,7 @@ from bokeh.models import Range1d, PanTool, ResetTool, HoverTool, ColumnDataSourc
 from bokeh.models.annotations import Span, BoxAnnotation, Label, LabelSet
 from bokeh.layouts import layout
 
+##======= work with data
 # Remove rows with NaN values and then map standard states to colors
 elements.dropna(inplace=True)  # if inplace is not set to True the changes are not written to the dataframe
 colormap = {'gas': 'yellow', 'liquid': 'orange', 'solid': 'red'}
@@ -16,6 +17,8 @@ gas = ColumnDataSource(elements[elements['standard state'] == 'gas'])
 liquid = ColumnDataSource(elements[elements['standard state'] == 'liquid'])
 solid = ColumnDataSource(elements[elements['standard state'] == 'solid'])
 
+
+##========== make figure ==============
 # Create the figure object
 f = figure()
 
@@ -36,8 +39,10 @@ f.circle(x="atomic radius", y="boiling point",
 f.xaxis.axis_label = "Atomic radius"
 f.yaxis.axis_label = "Boiling point"
 
+
+#### ============ adding SPAN line annotations =========
 # Calculate the average boiling point for all three groups by dividing the sum by the number of values
-gas_average_boil = sum(solid.data['boiling point']) / len(solid.data['boiling point'])
+gas_average_boil = sum(gas.data['boiling point']) / len(gas.data['boiling point'])
 liquid_average_boil = sum(liquid.data['boiling point']) / len(liquid.data['boiling point'])
 solid_average_boil = sum(solid.data['boiling point']) / len(solid.data['boiling point'])
 solid_min_boil = min(solid.data['boiling point'])
@@ -54,7 +59,7 @@ f.add_layout(span_gas_average_boil)
 f.add_layout(span_liquid_average_boil)
 f.add_layout(span_solid_boil)
 
-
+##=========== controls =================
 # Create a function that updates the location attribute value for span_solid_boil span
 # Also note that select.value returns values as strings so we need to convert the returned value to float
 def update_span(attr, old, new):
@@ -70,7 +75,9 @@ options = [(str(solid_average_boil), "Solid Average Boiling Point"),
 select = Select(title="Select span value", options=options)
 select.on_change("value", update_span)
 
+##========== layout =================
 # Add Select widget to layout and then the layout to curdoc
 lay_out = layout([[select]])
 curdoc().add_root(f)
 curdoc().add_root(lay_out)
+

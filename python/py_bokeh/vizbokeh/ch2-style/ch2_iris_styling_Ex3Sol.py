@@ -10,7 +10,7 @@ from PIL import ImageGrab
 #from screeninfo import get_monitors
 
 # Define the output file path
-output_file("nb/ch2/iris_ex3sol.html")
+output_file("../nb/ch2/iris_ex3sol.html")
 
 # Create the figure object
 f = figure(tools=[PanTool(), ResetTool(), WheelZoomTool()])

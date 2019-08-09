@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-'''A modulefor demonstration exceptions'''
+'''A module for demonstration exceptions'''
 
 def banner(message, border="-"):
     line = border * len(message)
@@ -90,8 +90,6 @@ def test_ch7_except_convert_return_error_code():
     def string_log_bis(s):
         v = convertWithExceptionRaise(s)
         return log(v)   # log(-1) is a math error
-
-
 
     #print( string_log('mama'))
 
