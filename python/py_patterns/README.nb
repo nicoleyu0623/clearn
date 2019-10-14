@@ -1,8 +1,0 @@
-this project uses the resources
-
-https://python-3-patterns-idioms-test.readthedocs.io
-
-patterns: 
-	Creational,
-	Structural,
-	Behavioral
