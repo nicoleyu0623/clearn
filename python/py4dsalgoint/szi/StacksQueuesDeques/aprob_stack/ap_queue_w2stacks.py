@@ -2,6 +2,8 @@
 Given the Stack class below, implement a Queue class using two stacks!
 Note, this is a "classic" interview problem.
 Use a Python list data structure as your Stack.
+
+common interview problem
 '''
 
 #########################
@@ -16,9 +18,9 @@ class Queue2Stacks(object):
         self.instack.append(item)
 
     def dequeue(self):
-        #if not self.outstack:
+        #if not self.outstack:        #if outstack is empty
         if len(self.outstack) == 0:
-            #while self.instack:
+            #while self.instack:      #while instack has elements (is non-empty)
             while len(self.instack) > 0:
                 self.outstack.append(self.instack.pop())
         return self.outstack.pop()
