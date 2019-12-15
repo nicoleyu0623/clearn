@@ -165,8 +165,228 @@ Run the main class  to start the consumeer, then rerun the producer main class  
   * xml (with optional schema)
   * yaml
 * binary
-  * avro with schemas
+  * avro with schemas (developed by apache hadoop)
   * protobuf
   * thrift
   
+**AVRO**
+
+Uses JSON based schemas. A scheme can handle a primitive or complex type
+
+complex supported types:
+* records
+* enums { "symbols": []}
+* arrays
+* maps {key, value}
+*  unions { ["null", "string"]}
+*  fixed {"size": "6"}
+
+!!w demo avro    create avro schema
+
+need to download avro-tools
+```
+wget http://apache.mirror1.spango.com/avro/avro-1.8.2/java/avtro-tools-1.8.2.jar
+
+# or
+wget http://apache.mirror.anlx.net/avro/avro-1.9.1/java/avro-tools-1.9.1.jar 
+```
+
+compiling a schema 
+
+```
+ cd szi/ch4
+ java -jar ~/bin/avro-tools-1.9.1.jar compile schema schemas/user_schema.avsc .
+```
+
+this generates a java file  in subfolder `com/pluralsight/kafka/model/User.java`
+
+
+**Schema Registry**
+
+a specific topic in kafka contains  schemas 
+a producer appends to a record a UID of a relevant schema contained in the Schema Registry  before serializing the record.  A consumer  aill get a schema based on UID before deserializing the record. 
+
+!!w demo schema registry    based on confluent solution
+
+use confluent schema registry from github
+```
+cd ~/bin  #store the schema registry under user local bin folder
+
+git clone https://github.com/confluentinc/schema-registry.git
+
+## check lateset branches
+
+git checkout v5.2.0
+
+git checkout master
+
+## compile 
+mvn package
+```
+(in pom.xml need to replace ${confluent.maven.repo} by value http://packages.confluent.io/maven/ )
+
+Now start the schema registry
+```
+bin/schema-registry-start  config/schema-registry.properties
+```
+
+the registry url starts to listen on port `localhost:8081`
+
+In intellij file->project structure Import modules for producer and consumer 
+
+In producers messages are configured to be sent to new topic `user-tracking-avro`
+
+
+in producer and consumer model package  java classes were generated from afrom schema compilation
+
+in Main classes propeerties  added
+
+ `key.seriaizer, value.serializer ,  key.deserializers value.deserializer`
+
+create topic
+```
+kafka-topics --bootstrap-server localhost:9093 --partitions 2 --replication-factor 1 --topic user-tracking-avro --create
+```
+
+
+### ch5 building your first streaming app 
+
+kafka streams
+
+fraud detection transactions  use-case 
+
+stream topology  is an acyclyc graph.
+
+it starts from consumer ends on producer
+
+stateless and stateful processors
+
+!!w  demo   05/kafka-streams  proj
+
+transactions-producer proj generates pmnt transactions
+
+### ch6 building a streaming application with KSQL
+
+KSQL is easy even for non developers.
+
+use-cases: data analytics, monitoring, IOT, 
+
+!!w demo alerting with ksql
+```
+git clone https://github.com/confluentinc/ksql.git
+
+cd ksql
+git checkout v5.2.0
+
+mvn package
+
+bin/ksql-server-start config/ksql-server.properties
+```
+ksql server starts to listen on port 8088
+
+connect to ksql on a client machine (same host)
+```
+bin/ksql
+```
+too fast  (see  kafka streams and ksql marek course)
+
+## ch7 transferring data with kafka connect
+
+kafka-connect    code reuse,
+persisting to database 
+
+scalability :   standalone, distributed w multiple instances of kafka connect
+
+architeture:
+
+kafka broker  ==> vm kafka connect worker ==> database
+
+workers have connectors per technology
+
+* source connectors
+* sink connectors
+
+!!w demo jdbc sink connect 
+
+get prereqs
+* bit.ly/mysql-jdbc-connector
+* bit.ly/mysql-driver
+
+kafka-connect is part of kafka
+`connect-disributed.sh`  `connect-standalone.sh`
+
+in properties.   set bootstrap port  9092 , 
+```
+plugin.path=/usr/local/share/kafka/plugins
+```
+mysql-connector.properties  file
+```
+name=mysql-connector
+connector.class=io.confluent.connect.jdbc.JdbcSinkConnector
+tasks.max=1
+topics=orders
+connection.url=jdbc:mysql://localhost:3306/globomantics
+connection.user=yourusername
+connection.password=yourpassword
+auto.create=true
+```
+
+ensure artefacts in plugins folder
+```
+cd /usr/local/share/kafka/plugins
+mkdir kafka-connect-jdbc
+cp ~/kafka-connect-jdbc-5.2.1.jar kafka-connect-jdbc/
+cp ~/mysql-connector-java-8.0.16.jar kafka-connect-jdbc/
+```
+
+Start the kafka connect standalone  
+```
+bin/connect-standalone.sh \
+config/connect-standalone.properties \
+config/mysql-connector.properties
+```
+
+produce some messages with clie producer 
+```
+kafka-console-producer --broker-list localhost:9093 --topic orders
+```
+put there the json mesage
+```json
+{
+  "schema": {
+    "type": "struct",
+    "fields": [
+      {
+        "type": "int64",
+        "optional": false,
+        "field": "nb_items"
+      },
+      {
+        "type": "int64",
+        "optional": false,
+        "field": "total_amount"
+      },
+      {
+        "type": "string",
+        "optional": false,
+        "field": "user_id"
+      }
+    ],
+    "optional": false,
+    "name": "orders"
+  },
+  "payload": {
+    "nb_items": 2,
+    "total_amount": 140,
+    "user_id": "ABC123"
+  }
+}
+```
+
+now connect to your mysql  and observe the message
+
+`select * from orders`
+
+
+
 
