@@ -1,5 +1,5 @@
 '''
-Doubly linked list refernces both next and previous  elements
+Doubly linked list references both next and previous  elements
 One can traverse such list from head to tail and from tail to head
 
 we can implement
