@@ -4,9 +4,9 @@
 https://nbviewer.jupyter.org/github/jmportilla/Python-for-Algorithms--Data-Structures--and-Interviews/tree/master/
 
 #### plan ######
-* BigO
-* Arrays
-* Stacks Queues
+* v BigO
+* v Arrays
+* v Stacks Queues
 * Linked Lists
 * Recursion
 * Trees
