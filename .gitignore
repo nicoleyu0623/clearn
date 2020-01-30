@@ -1,5 +1,9 @@
+#osx
+.DS_Store
 #idea projects
 .idea/
 target/
 .ipynb_checkpoints/
 __pycache__/
+#mvn
+target/
