@@ -3,6 +3,9 @@
 NB: this course has a lot of simple demo spark programs.   They are in
 subpackages of `com.sparkTutorial` 
 
+course code:
+https://github.com/PacktPublishing/Apache-Spark-with-Java---Learn-Spark-from-a-Big-Data-Guru
+
 additional resources
 check: udemy:
 Apache Spark for Java Developers  (21 h) chapter on streaming
@@ -226,5 +229,87 @@ pair rdd are key value pair
 csv data format: 1:UUId of house, 2:location of house, 3:price of house in usd, 4:number of bedrooms in house, 5: num of bathrooms of the property, 6: size of house in sq feet
 
 goal: compute average price for houses with different bedrooms
+
+
+
+## ch running spark in cluster 
+
+* proto spark program on  a local machine
+* deploy same program on a cluster . A driver program distributes jobs
+* cluster manager is a pluggable component of spark
+    * other managers:   hadoop yarn, apache mesos
+
+#### demo package spark submit application    
+* dld sprk to local box
+* export spark app in jar file
+* submit our app to our local spark cluster through spark-submit script
+
+download spark from https://spark.apache.org/downloads.html
+
+choose  tgz spark v 2.4.5 package type pre-built for apache hadooop 2.7
+
+export a program to a jar with all included dependencies. rely on build tool 
+
+in file `build.gradle`  check for `jar` task 
+
+in project root dir ran task to produce a jar
+`./gradlew jar`
+
+It produces a jar file in `build/libs/StackOverFlowSurvey-spark.jar`
+
+perform a jar and data file copy
+```
+cp build/libs/StackOverFlowSurvey-spark.jar  /opt/sft/SparkJob/jars/
+cp in/2016-stack-overflow-survey-responses.csv  /opt/sft/SparkJob/in
+```
+
+make sure in .bashrc_profile
+`SPARK_HOME` is set to `/opt/sft/spark-2.4.5-bin-hadoop2.7/` and `$SPARK_HOME/bin` is added to `$PATH`
+
+then submit the job
+```
+cd /opt/sft/SparkJob
+/opt/sft/spark-2.4.5-bin-hadoop2.7/bin/spark-submit /opt/sft/SparkJob/jars/StackOverFlowSurvey-spark.jar 
+```
+
+* user submits app using spark-submit
+* driver program concats cluster manager for info on resources
+* cluster manager launches execugtors on behalf of the driver program
+* tasks are run on executor processes to compute and save results
+* if the driver's main() exists or it calls  SparkContext.stop(), executors are terminated
+
+Possible opgtions to `spark-submit`
+```
+$SPARK_HOME/bin/spark-submit \
+ --executor-memory 20G \  #limited by total RAM on each executor node
+ --total-executor-cores 100 \  #global cluster limit on how many cores a spark app can consume
+ /path/to/program.jar
+```
+
+spark-submit  can be launched from cmd, from cron file, from schedulling solution
+
+#### run spark application on Amazon EMR cluster
+* Amazon EMR provides a managed hadoop framework across dynamically scalable amazon EC2 instances
+
+check aws admin on dev  region: ireland
+
+Services -> EMR  create cluster
+
+launch mode :  cluseter
+
+application: Spark
+
+hadware: m5.xlarage (4 vcpu, 16gb ram)
+
+ec2 keypair : dip2-aws-master
+
+create cluster
+
+once provisioned: manage security group to add SSH connection
+
+178.197.234
+
+
+
 
 

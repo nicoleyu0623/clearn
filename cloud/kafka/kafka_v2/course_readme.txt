@@ -158,6 +158,10 @@ the data dir under kfd  start to get filled with files
 section 6 cli
 ------------------------
 
+kafka cli kafka-cheat-sheet.md
+https://gist.github.com/ursuad/e5b8542024a15e4db601f34906b30bb5
+
+
 kafka-topics
 
 depr
