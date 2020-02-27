@@ -20,7 +20,7 @@ public class RsvpController {
     //@CrossOrigin(origins = { "http://localhost:8080" }, maxAge = 6000)
     @GetMapping(value = "/meetupRsvps", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<MeetupRSVP> meetupRsvps() {
-        //tailable coursor
+        //tailable cursor
         return mongoTemplate.tail(
                 new Query(), MeetupRSVP.class).share();
     }
