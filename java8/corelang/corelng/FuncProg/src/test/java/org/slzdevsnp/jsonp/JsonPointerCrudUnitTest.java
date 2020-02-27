@@ -4,6 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import javax.json.*;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class JsonPointerCrudUnitTest {
 
     @Test
@@ -57,6 +61,50 @@ public class JsonPointerCrudUnitTest {
 
         assertEquals(book, "{\"title\":\"Title 2\",\"author\":\"John Doe\"}");
 
+    }
+
+    // NB! this one is important 2nd level elements
+    @Test
+    public void testJsonPointerFetchField() throws IOException {
+        JsonStructure jsonStructure;
+        try(JsonReader reader = Json.createReader(JsonPointerCrudUnitTest.class
+                        .getResourceAsStream("/books.json"))) {
+            jsonStructure = reader.read();
+        }
+
+        JsonPointer jsonPointer = Json.createPointer("/library");
+        JsonString jsonString = (JsonString) jsonPointer.getValue(jsonStructure);
+        assertEquals(jsonString.getString(),"My Personal Library");
+
+
+        jsonPointer = Json.createPointer("/range");
+        JsonStructure jsonSubStruct = (JsonStructure) jsonPointer.getValue(jsonStructure);
+        System.out.println(jsonSubStruct.toString());
+
+
+        JsonString lftJsonString = (JsonString) Json
+                                                .createPointer("/from")
+                                                .getValue(jsonSubStruct);
+        JsonString rghtJsonString = (JsonString) Json
+                                                .createPointer("/to")
+                                                .getValue(jsonSubStruct);
+
+        assertEquals(lftJsonString.getString(),"left");
+        assertEquals(rghtJsonString.getString(),"right");
+
+    }
+
+    @Test
+    public void testJsonPointerMissingFiield() throws IOException {
+        JsonStructure jsonStructure;
+        try(JsonReader reader = Json.createReader(JsonPointerCrudUnitTest.class
+                .getResourceAsStream("/books.json"))) {
+            jsonStructure = reader.read();
+        }
+
+        JsonPointer jsonPointer = Json.createPointer("/missing");
+
+        assertFalse(jsonPointer.containsValue(jsonStructure));
     }
 
 }
