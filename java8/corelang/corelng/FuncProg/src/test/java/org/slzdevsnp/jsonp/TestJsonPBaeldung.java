@@ -46,13 +46,14 @@ public class TestJsonPBaeldung {
             assertEquals(jsonObject.getString("title"), "Fun with JSON-Processing");
             assertTrue(jsonObject.getBoolean("published"));
 
+            // String snullabl = jsonObject.getString("missing_t"); //this approach produces null exception
+            //Optional<String> opt =  Optional.ofNullable(snullabl);
+            //assertTrue(opt.isEmpty());
 
-            Optional<JsonString> mx;
-            //not presnt
-            mx = Optional
+            //tag not present NB works
+            Optional<JsonString> mx = Optional
                     .ofNullable(jsonObject.getJsonString("missingtag"));
             assertTrue(mx.isEmpty());
-
             mx.ifPresent(v -> ilst.add(Integer.parseInt(v.toString())));
 
             // .getValue() does not supported to be null
@@ -61,19 +62,32 @@ public class TestJsonPBaeldung {
             //        .getValue("/missingtag"))
             //        .isEmpty());
 
-            //present  .getValue() needs pointer notation eg "/id"
-            Optional<JsonValue> px;
-            px = Optional
-                    .ofNullable(jsonObject.getValue("/id"));
-            px.ifPresent(v -> ilst.add(Integer.parseInt(v.toString())));
 
+            //present  .getValue() needs pointer notation eg "/id"
+            // pointer notation tag needs to be present
+            // but we do not care about the field type!!
+            Optional<JsonValue> px = Optional
+                    .ofNullable(jsonObject.getValue("/id"));
+            px.ifPresent(v -> ilst.add(Integer.valueOf(((JsonNumber) v).intValue() )));
+
+
+//            Optional<JsonString> ppx = Optional
+//                    .ofNullable(jsonObject.getJsonString("id"));  // produces exception
+//            ppx.ifPresent(v->ilst.add(Integer.parseInt(v.toString())));
+
+            // works
+            Optional<JsonNumber> ppx = Optional
+                    .ofNullable(jsonObject.getJsonNumber ("id"));  // produces exception
+            ppx.ifPresent(v->ilst.add(Integer.parseInt(v.toString())));
+
+           //works
             Optional<JsonNumber> nx = Optional
                     .ofNullable(jsonObject.getJsonNumber("age"));
             assertTrue(nx.isPresent());
             nx.ifPresent(v -> ilst.add(Integer.parseInt(v.toString())));
 
-            // 2 elemns is expected
-            assertEquals(ilst.size(), 2);
+            // 3 elemns is expected
+            assertEquals(ilst.size(), 3);
 
             for (Integer el : ilst) {
                 System.out.println("el:" + el);
