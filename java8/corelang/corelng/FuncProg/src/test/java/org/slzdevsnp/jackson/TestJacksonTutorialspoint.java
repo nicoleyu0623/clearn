@@ -108,13 +108,14 @@ public class TestJacksonTutorialspoint {
 
         try(Scanner scanner = new Scanner(new File("/tmp/student.json"))){
             String contents = scanner.useDelimiter("\\A").next();
-            System.out.println(contents);
+            System.out.println("scanner contents:"+contents);
             assertTrue(contents.length()>0);
         }
-
+/*
         Student studAck = mapper.readValue(new File("/tmp/student.json"),Student.class);
         System.out.println("studAck:"+studAck.toString());
         assertTrue(studAck.toString().length()>0);
+*/
     }
 
     @Test

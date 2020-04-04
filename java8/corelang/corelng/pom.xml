@@ -13,11 +13,18 @@
     <modules>
         <module>Generics</module>
         <module>FuncProg</module>
+        <module>Lombok</module>
     </modules>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>12</java.version>
+
+        <guava-version>28.2-jre</guava-version>
+        <lombok.version>1.18.8</lombok.version>
+        <commons-logging.version>1.2</commons-logging.version>
+        <slf4j.version>1.7.30</slf4j.version>
 
         <jakarta-json.version>1.1.6</jakarta-json.version>
         <jackson.version>2.10.2</jackson.version>
@@ -28,12 +35,19 @@
         <junit-jupiter-params.version>5.1.0</junit-jupiter-params.version>
         <assertj-core.version>3.12.2</assertj-core.version>
 
+
+        <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
+
     </properties>
 
-
-    <dependencies>
+    <dependencyManagement>
+       <dependencies>
         <!-- json -->
-
+           <dependency>
+               <groupId>com.google.guava</groupId>
+               <artifactId>guava</artifactId>
+               <version>${guava-version}</version>
+           </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
@@ -56,7 +70,33 @@
             <version>${jakarta-json.version}</version>
         </dependency>
 
-        <!-- test scope -->
+           <dependency>
+               <groupId>org.projectlombok</groupId>
+               <artifactId>lombok</artifactId>
+               <version>${lombok.version}</version>
+           </dependency>
+
+           <dependency>
+               <groupId>commons-logging</groupId>
+               <artifactId>commons-logging</artifactId>
+               <version>${commons-logging.version}</version>
+           </dependency>
+
+           <dependency>
+               <groupId>org.slf4j</groupId>
+               <artifactId>slf4j-api</artifactId>
+               <version>${slf4j.version}</version>
+           </dependency>
+
+           <dependency>
+               <groupId>org.slf4j</groupId>
+               <artifactId>slf4j-log4j12</artifactId>
+               <version>${slf4j.version}</version>
+               <scope>test</scope>
+           </dependency>
+
+
+           <!-- test scope -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -82,8 +122,8 @@
             <version>${assertj-core.version}</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
@@ -91,14 +131,14 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>2.3.2</version>
             <configuration>
-                <source>${maven.compiler.source}</source>
-                <target>${maven.compiler.target}</target>
+                <source>${java.version}</source>
+                <target>${java.version}</target>
             </configuration>
         </plugin>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.22.1</version>
+            <version>${maven-surefire-plugin.version}</version>
         </plugin>
         </plugins>
     </build>
