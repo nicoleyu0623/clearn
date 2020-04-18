@@ -28,7 +28,7 @@ public class ListTestsWithExceptions {
         strings = null;
         try {
             strings.add("hello");
-            fail("Should have thrown an NPE");
+            fail("Should have thrown an NPE");  //this line is not reached
         } catch (NullPointerException e) {
             assertNull(strings);
         }
@@ -42,9 +42,10 @@ public class ListTestsWithExceptions {
 
     @Test
     public void nullListThrowsNPEUsingRule() {
-        String[] stringArray = strings.toArray(new String[0]);
+        String[] stringArray = strings.toArray(new String[0]); //array with length 1
+        //System.out.println("stringArray[7]:"+ stringArray[7]); this line will throw exception here
         thrown.expect(ArrayIndexOutOfBoundsException.class);
-        thrown.expectMessage("7");
-        System.out.println(stringArray[7]);
+        thrown.expectMessage("7"); //this line expect really a "7" msg
+        System.out.println("stringArray[7]:"+ stringArray[7]);
     }
 }

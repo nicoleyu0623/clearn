@@ -14,6 +14,7 @@
         <module>Generics</module>
         <module>FuncProg</module>
         <module>Lombok</module>
+        <module>Logging</module>
     </modules>
 
     <properties>

@@ -51,6 +51,7 @@ public class AssertTests {
 
     @Test
     public void testAssertNotSame() {
+        //references to 2 separate refrences
         assertNotSame("should not be same Object", new Object(), new Object());
     }
 
@@ -68,11 +69,13 @@ public class AssertTests {
     // JUnit Matchers assertThat
     @Test
     public void testAssertThatBothContainsString() {
-        assertThat("albumen", both(containsString("a")).and(containsString("b")));
+        assertThat("albumen",
+                both(containsString("a")).and(containsString("b")));
     }
 
     @Test
     public void testAssertThatHasItems() {
+
         assertThat(Arrays.asList("one", "two", "three"), hasItems("one", "three"));
     }
 

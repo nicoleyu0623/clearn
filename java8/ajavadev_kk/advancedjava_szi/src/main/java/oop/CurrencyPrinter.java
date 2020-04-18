@@ -15,5 +15,6 @@ public class CurrencyPrinter {
         System.out.println(nf.format(amount));
 
         System.out.println(nf.getClass().getName());
+        System.out.println("current class:"+ CurrencyPrinter.class.getName());
     }
 }

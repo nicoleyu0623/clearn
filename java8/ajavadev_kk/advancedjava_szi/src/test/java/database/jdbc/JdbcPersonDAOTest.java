@@ -32,6 +32,7 @@ public class JdbcPersonDAOTest {
 
     @Test
     public void delete() {
+        //expect to delete a row with max value of id
         int maxId = dao.getIds().stream()
                 .mapToInt(Integer::intValue)
                 .max()

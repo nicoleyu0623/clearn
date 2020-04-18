@@ -7,12 +7,17 @@ import java.util.List;
 public class JdbcPersonDAO implements PersonDAO {
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/hr";
-    private static final String USER = "jpa";
+    private static final String USER = "jpa";     //szi put this in property file
     private static final String PASSWORD = "java";
+
+    /*
+        classic approach. no transactions.  every request a new connnection is requested
+
+     */
 
     public JdbcPersonDAO() {
         try {
-            Class.forName(DRIVER);
+            Class.forName(DRIVER);   //driver class is loaded by reflection
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -21,6 +26,7 @@ public class JdbcPersonDAO implements PersonDAO {
     @Override
     public List<Person> findAll() {
         List<Person> people = new ArrayList<>();
+        //try with resources, avoids to have a finally blcok
         try (
                 Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
                 PreparedStatement pst = conn.prepareStatement("SELECT * FROM hr.PEOPLE")
@@ -43,7 +49,7 @@ public class JdbcPersonDAO implements PersonDAO {
         try (
                 Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
                 PreparedStatement pst = conn.prepareStatement(
-                        "SELECT * FROM hr.PEOPLE WHERE id=?")
+                        "SELECT * FROM hr.PEOPLE WHERE id=?") //first "?"
         ) {
             pst.setInt(1, id);
             ResultSet rs = pst.executeQuery();
@@ -67,7 +73,7 @@ public class JdbcPersonDAO implements PersonDAO {
                         Statement.RETURN_GENERATED_KEYS)
         ) {
             pst.setString(1, p.getName());
-            int uc = pst.executeUpdate();
+            int uc = pst.executeUpdate();  //the pk id is auto_incremented from tbl def
             if (uc != 1) throw new SQLException("No rows added");
 
             try (ResultSet keys = pst.getGeneratedKeys()) {

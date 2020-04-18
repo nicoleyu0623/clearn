@@ -3,7 +3,7 @@ package database.jdbc;
 public class Person {
     public static final String DEFAULT_NAME = "UNKNOWN";
 
-    private Integer id;
+    private Integer id;  //Integer class is import for JPA implm
     private String name;
 
     public Person() {

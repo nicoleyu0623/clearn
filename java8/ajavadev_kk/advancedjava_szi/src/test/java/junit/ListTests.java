@@ -25,7 +25,8 @@ public class ListTests {
 
     @Test
     public void defaultListHasCorrectSize() {
-        assertEquals("default list should have six strings", 6, strings.size());
+        assertEquals("default list should have six strings",
+                6, strings.size());
     }
 
     @Test

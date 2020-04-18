@@ -7,11 +7,11 @@ import java.util.List;
 
 public class JpaPersonDAO implements PersonDAO {
     private EntityManagerFactory emf =
-            Persistence.createEntityManagerFactory("hr");
+            Persistence.createEntityManagerFactory("hr"); //dbname
 
     @Override
     public List<Person> findAll() {
-        EntityManager em = emf.createEntityManager();
+        EntityManager em = emf.createEntityManager(); //normally entity manager done in a service level
         em.getTransaction().begin();
         List<Person> people = em.createQuery(
                 "select p from Person p", Person.class).getResultList();
