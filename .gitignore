@@ -7,3 +7,10 @@ target/
 __pycache__/
 #mvn
 target/
+#gradle
+.gradle
+**/build/
+!src/**/build/
+#avoid gradle-wrapper.jar ignoring
+!gradle-wrapper.jar
+.gradletasknamecache
