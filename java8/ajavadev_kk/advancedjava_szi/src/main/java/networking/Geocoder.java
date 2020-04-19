@@ -47,6 +47,7 @@ public class Geocoder {
         return response;
     }
 
+    //how to parse Json
     public void fillInLatLng(Location location) {
         String encoded = encodeAddress(
                 Arrays.asList(location.getStreet(), location.getCity(), location.getState()));

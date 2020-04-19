@@ -5,6 +5,7 @@ import java.util.stream.IntStream;
 public class LazyStreams {
 
     public static int multByTwo(int n) {
+        // add system.out.print to see when this method is really called
         System.out.printf("Inside multByTwo with arg %d%n", n);
         return n * 2;
     }

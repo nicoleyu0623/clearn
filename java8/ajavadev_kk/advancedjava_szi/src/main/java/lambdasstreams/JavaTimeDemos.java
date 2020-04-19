@@ -39,7 +39,7 @@ public class JavaTimeDemos {
         System.out.printf("First day of Spring, 2016: %s%n", firstDayofSpring);
 
         // Day of week available
-        System.out.println("First day of spring this year falls on a " +
+        System.out.println("First day of spring from 2016 falls on a " +
                 firstDayofSpring.getDayOfWeek());
 
         // until with ChronoUnit gives days between
@@ -53,24 +53,33 @@ public class JavaTimeDemos {
         Set<String> availableTimeZones = ZoneId.getAvailableZoneIds();
         System.out.printf("Total number of time zones: %d%n",
                 availableTimeZones.size());
+        System.out.println("print only timezones containing Europe");
         availableTimeZones.stream()
-                .filter(name -> name.contains("America"))
+                .filter(name -> name.contains("Europe"))
                 .forEach(System.out::println);
 
         ZonedDateTime missing = ZonedDateTime.of(
                 LocalDate.of(2016, Month.MARCH, 13),
                 LocalTime.of(2, 30),      // skipped by daylight savings
-                ZoneId.of("America/New_York"));
+                ZoneId.of("America/New_York"));      //expect 03:30 AM
         System.out.println(missing);
 
         ZonedDateTime spring =
-                ZonedDateTime.of(2016, 3, 20, 0, 0, 0, 0, ZoneId.systemDefault());
+                ZonedDateTime.of(2016,
+                        3,
+                        20,
+                        0,
+                        0,
+                        0,
+                        0,
+                        ZoneId.systemDefault());
 
         System.out.println(
                 DateTimeFormatter.RFC_1123_DATE_TIME.format(spring));
-        DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG)
+        DateTimeFormatter formatter = DateTimeFormatter
+                .ofLocalizedDateTime(FormatStyle.LONG)
                 .withLocale(Locale.FRANCE);
-        System.out.println(formatter.format(spring));
+        System.out.println("with french format:"+formatter.format(spring));
 
     }
 }

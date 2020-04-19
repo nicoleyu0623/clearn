@@ -9,6 +9,7 @@ public class CollectionsDemo {
     private List<Integer> nums = Arrays.asList(3, 1, 4, 1, 5, 9, 2, 6, 5,
             3, 5, 8, 9, 7, 9, 3, 2, 3, 8, 4, 6, 2, 6, 4, 3, 3);
 
+    //define functions with lambda syntax
     private Function<Integer, Integer> doubler = n -> n * 2;
 
     private Function<Integer, Integer> doublerWithSleep = n -> {
@@ -22,13 +23,13 @@ public class CollectionsDemo {
     };
 
     public void printNums(Function<Integer, Integer> function) {
-        System.out.println(nums.stream()
+        System.out.println(nums.stream()  // .stream()
                 .map(function)
                 .collect(Collectors.toList()));
     }
 
     public void printNumsParallel(Function<Integer, Integer> function) {
-        System.out.println(nums.parallelStream()
+        System.out.println(nums.parallelStream()  // .parallelStream() !!
                 .map(function)
                 .collect(Collectors.toList()));
     }
@@ -39,16 +40,16 @@ public class CollectionsDemo {
         long start = System.nanoTime();
         demo.printNums(demo.doubler);
         long end = System.nanoTime();
-        System.out.println("Time taken: " + (end - start)/1e9);
+        System.out.println("doubler Time [s] taken: " + (end - start)/1e9);
 
         start = System.nanoTime();
         demo.printNums(demo.doublerWithSleep);
         end = System.nanoTime();
-        System.out.println("Time taken: " + (end - start)/1e9);
+        System.out.println("doublerWithSleep Time [s] taken: " + (end - start)/1e9);
 
         start = System.nanoTime();
         demo.printNumsParallel(demo.doublerWithSleep);
         end = System.nanoTime();
-        System.out.println("Time taken: " + (end - start)/1e9);
+        System.out.println("parallelStream doublerWithSleep Time [s] taken: " + (end - start)/1e9);
     }
 }

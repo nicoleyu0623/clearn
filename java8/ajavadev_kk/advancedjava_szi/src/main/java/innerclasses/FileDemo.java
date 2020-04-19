@@ -16,6 +16,7 @@ public class FileDemo {
         }
 
         System.out.println("\nUsing anonymous inner class for text files:");
+        // example how to use anonymous inner class. FileNameFilter is interface
         for (String name : dir.list(new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {

@@ -27,9 +27,10 @@ public class StreamsDemoTest {
 
     @Test
     public void testSumFirstNBigDecimals() throws Exception {
-        assertThat(demo.sumFirstNBigDecimals(10), is(closeTo(
-                1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10, 0.00001
-        )));
+        assertThat(demo.sumFirstNBigDecimals(10),
+                is(closeTo(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10,
+                        0.00001)
+                  ));
     }
 
     @Test

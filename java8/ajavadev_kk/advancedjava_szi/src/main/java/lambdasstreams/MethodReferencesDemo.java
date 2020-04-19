@@ -9,10 +9,10 @@ public class MethodReferencesDemo {
                 .forEach(n -> System.out.println(n));
 
         Stream.of(3, 1, 4, 1, 5, 9)
-                .forEach(System.out::println);
+                .forEach(System.out::println); //references method
 
         Consumer<Integer> printer = System.out::println;
         Stream.of(3, 1, 4, 1, 5, 9)
-                .forEach(printer);
+                .forEach(printer); //references method here
     }
 }

@@ -1,7 +1,7 @@
 package innerclasses;
 
 public class Outer {
-    private int anInt;
+    private int anInt;   //inner class has access to this private attribute
     private String string;
 
     public int getAnInt() {
@@ -15,6 +15,7 @@ public class Outer {
     public String getString() {
         return string;
     }
+
 
     public void setString(String string) {
         this.string = string;

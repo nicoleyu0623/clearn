@@ -25,7 +25,7 @@ public class StreamsDemo {
     }
 
     public int getTotalLength() {
-        return strings.stream()
+        return strings.stream()   //referencing method String::length
                 .collect(Collectors.summingInt(String::length));
     }
 
@@ -39,7 +39,7 @@ public class StreamsDemo {
     public Double sumRandoms1(int num) {
         return Stream.generate(Math::random)
                 .limit(num)
-                .reduce(Double::sum)
+                .reduce(Double::sum) //returns an optional
                 .orElse(0.0);
     }
 
