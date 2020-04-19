@@ -3,6 +3,12 @@ package szi.l01.inerfaces;
 public class Employee implements Comparable<Employee> {
     private String name;
     private double salary;
+    private final double DEFAULTSALARY = 50000;
+
+    public Employee(String name) {
+        this.name = name;
+        this.salary = DEFAULTSALARY;
+    }
 
     public Employee(String name, double salary) {
         this.name = name;
