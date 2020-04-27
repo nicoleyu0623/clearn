@@ -10,7 +10,6 @@ import org.apache.spark.sql.streaming.StreamingQuery;
 import org.apache.spark.sql.streaming.StreamingQueryException;
 import org.apache.spark.sql.types.StructType;
 
-import java.awt.*;
 import java.io.File;
 
 import static org.apache.spark.sql.functions.col;
@@ -18,7 +17,7 @@ import static org.apache.spark.sql.functions.from_json;
 import static org.apache.spark.sql.types.DataTypes.IntegerType;
 import static org.apache.spark.sql.types.DataTypes.StringType;
 
-public class JobKafkaJson {
+public class PersonKafkaJson {
     private static final String TOPIC_INGRES ="json_incoming";
     private static final String TOPIC_EGRES="json_out";
     private static final String CHKPOINTLOC ="/tmp/chkp";
@@ -61,7 +60,7 @@ public class JobKafkaJson {
 
         df.printSchema();
 
-        JobKafkaJson jk = new JobKafkaJson();
+        PersonKafkaJson jk = new PersonKafkaJson();
 
         //jk.writeConsoleValueRaw(session, df); //OK
         //jk.writeConsoleValueSchema(session,df); //OK
