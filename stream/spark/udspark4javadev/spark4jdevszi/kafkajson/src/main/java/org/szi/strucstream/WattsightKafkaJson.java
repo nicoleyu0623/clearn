@@ -62,6 +62,9 @@ public class WattsightKafkaJson {
         //to improve sql aggregation performance
         session.conf().set("spark.sql.shuffle.partitions", "10");
 
+        session.udf().register("array_contains_no_missed_vals",
+                new ArrayContainsNoMissingValues(), DataTypes.BooleanType);
+
         Dataset<Row> df = session.readStream()
                 .format("kafka")
                 .option("kafka.bootstrap.servers", "localhost:9092")
@@ -70,27 +73,22 @@ public class WattsightKafkaJson {
                 .load();
         df.printSchema();
 
-
-
         WattsightKafkaJson wk = new WattsightKafkaJson();
-        //only one of next methods
-        //wk.writeConsoleValueSchema(session,df);
-        wk.writeKafkaValue(session,df);
+        ///////////////////////////////////////////////////
+        wk.processValueSchema(session,df,true);
+        //wk.writeKafkaValue(session,df);
     }
     private Dataset<Row> applyUdfs(SparkSession session, Dataset<Row>df){
-        //udfs
-        session.udf().register("array_contains_no_missed_vals",
-                new ArrayContainsNoMissingValues(), DataTypes.BooleanType);
+
         Dataset<Row>  withValidationDf = df
                 .select(col("*"))
                 .withColumn("d_validation",
                         functions.expr(" case when array_contains_no_missed_vals(points) then 'OK' else 'NOK' end"));
         return withValidationDf;
-
     }
 
     //this method helps to debug the streaming queries
-    private void writeConsoleValueSchema(SparkSession session, Dataset<Row> df)
+    private void processValueSchema(SparkSession session, Dataset<Row> df, boolean  isToKafka)
             throws StreamingQueryException {
         setSchema();
 
@@ -101,40 +99,30 @@ public class WattsightKafkaJson {
                 .alias("kv")
                 .select("payload.*");
 
-        log.debug(json2colDf.toString());
-
         Dataset<Row>  validDf = applyUdfs(session,json2colDf);
 
-        StreamingQuery qs = validDf
-                .writeStream()
-                .format("console")
-                .option("truncate",false)
-                .outputMode("append")
-                .start();
-        qs.awaitTermination();
-    }
-    private void writeKafkaValue(SparkSession session, Dataset<Row> df)
-            throws StreamingQueryException {
-        setSchema();
-        //we need a schema in order to convert json in source kfk msg to df columns
-        Dataset<Row> columnsDf = df
-                .select(col("timestamp").as("kfk_timestamp"),
-                        from_json(col("value").cast("string"),this.schema ).as("payload"))
-                .alias("kv")
-                .select("payload.*");
+        log.debug(validDf.toString());
 
-        Dataset<Row>  validDf = applyUdfs(session,columnsDf);
-
-        StreamingQuery query = validDf
-                // key for kfk write can be null
-                .selectExpr("to_json(struct(*)) AS value" )
-                .writeStream()
-                .format("kafka")
-                .option("kafka.bootstrap.servers","localhost:9092")
-                .option("topic", TOPIC_EGRES)
-                .option("checkpointLocation",CHKPOINTLOC)
-                .outputMode(OutputMode.Append())
-                .start();
-        query.awaitTermination();
+        if(!isToKafka) {
+            StreamingQuery qs = validDf
+                    .writeStream()
+                    .format("console")
+                    .option("truncate", false)
+                    .outputMode("append")
+                    .start();
+            qs.awaitTermination();
+        }else{
+            StreamingQuery qs = validDf
+                    // key for kfk write can be null
+                    .selectExpr("to_json(struct(*)) AS value" )
+                    .writeStream()
+                    .format("kafka")
+                    .option("kafka.bootstrap.servers","localhost:9092")
+                    .option("topic", TOPIC_EGRES)
+                    .option("checkpointLocation",CHKPOINTLOC)
+                    .outputMode(OutputMode.Append())
+                    .start();
+            qs.awaitTermination();
+        }
     }
 }
