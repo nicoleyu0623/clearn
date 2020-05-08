@@ -75,7 +75,7 @@ public class WattsightKafkaJson {
 
         WattsightKafkaJson wk = new WattsightKafkaJson();
         ///////////////////////////////////////////////////
-        wk.processValueSchema(session,df,true);
+        wk.processValueSchema(session,df,false);
         //wk.writeKafkaValue(session,df);
     }
     private Dataset<Row> applyUdfs(SparkSession session, Dataset<Row>df){

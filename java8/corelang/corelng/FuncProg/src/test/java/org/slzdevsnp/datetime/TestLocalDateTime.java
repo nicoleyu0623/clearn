@@ -2,8 +2,7 @@ package org.slzdevsnp.datetime;
 
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -24,6 +23,24 @@ public class TestLocalDateTime {
         System.out.println(dtCrez.getZone());
         assertTrue(dtCrez != null);
     }
+
+    @Test
+    void testFormattedZonedNow(){
+        DateTimeFormatter formatter
+                = DateTimeFormatter.ofPattern("yyyyMMdd'-'HH:mm:ss.SSS");
+        Instant now = Instant.now();
+        LocalDateTime ldt = LocalDateTime.ofInstant(now, ZoneOffset.UTC);
+        System.out.println("ldt:"+ldt);
+        ZonedDateTime udt = now.atZone(ZoneId.of("UTC"));
+        System.out.println("udt:"+udt);
+        //print with date formatter
+        System.out.println("fmt ldt:"+formatter.format(ldt));
+        System.out.println("fmt udt:"+formatter.format(udt));
+        System.out.println(formatter.format(Instant.now().atZone(ZoneId.of("UTC"))));
+        assertTrue(true);
+
+    }
+
     @Test
     void testParsingDateTimeOffset(){
 
