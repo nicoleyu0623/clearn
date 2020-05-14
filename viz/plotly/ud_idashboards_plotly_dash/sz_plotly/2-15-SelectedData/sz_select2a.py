@@ -45,7 +45,7 @@ app.layout = html.Div([
                 hovermode='closest'
             )
         }
-    )], style={'width':'30%', 'display':'inline-block'}),
+    )], style={'width':'50%', 'display':'inline-block'}),
 
     html.Div([
     html.Pre(id='density', style={'paddingTop':25})

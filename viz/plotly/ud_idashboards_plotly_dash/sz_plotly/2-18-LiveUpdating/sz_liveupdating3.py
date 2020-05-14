@@ -28,7 +28,7 @@ app.layout = html.Div([
         id='interval-component',
         interval=6000, # 6000 milliseconds = 6 seconds
         n_intervals=0
-    )])
+    )] #sz
 ])
 counter_list = []
 
