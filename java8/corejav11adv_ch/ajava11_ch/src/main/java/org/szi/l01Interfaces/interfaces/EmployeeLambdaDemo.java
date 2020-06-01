@@ -1,8 +1,8 @@
 package org.szi.l01Interfaces.interfaces;
 
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 import java.awt.event.ActionListener;
@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class EmployeeLambdaDemo {
-    private static final Logger logger = LogManager.getLogger("EmployeeLambdaDemo");
+    private static final Logger logger = LoggerFactory.getLogger(EmployeeLambdaDemo.class);;
 
     public static void main(String[] args) {
         List<String> names = Arrays.asList("Max Levin", "Karl Zeus", "Vlad Ko");
