@@ -38,7 +38,7 @@
             </plugin>
 
 
-            <!--necessary for specific record-->
+            <!--necessary for avro specific record-->
             <plugin>
                 <groupId>org.apache.avro</groupId>
                 <artifactId>avro-maven-plugin</artifactId>

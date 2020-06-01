@@ -27,12 +27,12 @@ public class KafkaAvroJavaProducerV2Demo {
         // copied from avro examples
         Customer customer = Customer.newBuilder()
                 .setAge(34)
-                .setFirstName("John")
-                .setLastName("Doe")
-                .setHeight(178f)
-                .setWeight(75f)
-                .setEmail("john.doe@gmail.com")
-                .setPhoneNumber("(123)-456-7890")
+                .setFirstName("Mark")
+                .setLastName("Johnson")
+                .setHeight(180f)
+                .setWeight(90f)
+                .setEmail("mark.johnson@gmail.com")    //new fiield v2
+                .setPhoneNumber("(123)-456-7890")   //new field v2
                 .build();
 
         ProducerRecord<String, Customer> producerRecord = new ProducerRecord<String, Customer>(

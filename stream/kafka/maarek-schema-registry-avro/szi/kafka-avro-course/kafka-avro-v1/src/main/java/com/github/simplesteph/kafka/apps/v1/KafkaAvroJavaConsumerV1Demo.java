@@ -24,7 +24,7 @@ public class KafkaAvroJavaConsumerV1Demo {
         properties.setProperty("key.deserializer", StringDeserializer.class.getName());
         properties.setProperty("value.deserializer", KafkaAvroDeserializer.class.getName());
         properties.setProperty("schema.registry.url", "http://127.0.0.1:8081");
-        properties.setProperty("specific.avro.reader", "true");
+        properties.setProperty("specific.avro.reader", "true"); //NB
 
         KafkaConsumer<String, Customer> kafkaConsumer = new KafkaConsumer<>(properties);
         String topic = "customer-avro";

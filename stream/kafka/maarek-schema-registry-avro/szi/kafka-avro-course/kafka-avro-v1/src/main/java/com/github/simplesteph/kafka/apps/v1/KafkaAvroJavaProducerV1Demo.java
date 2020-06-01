@@ -14,12 +14,14 @@ public class KafkaAvroJavaProducerV1Demo {
         // normal producer
         properties.setProperty("bootstrap.servers", "127.0.0.1:9092");
         properties.setProperty("acks", "all");
-        properties.setProperty("retries", "10");
+        properties.setProperty("retries", "2"); //10
+
         // avro part
         properties.setProperty("key.serializer", StringSerializer.class.getName());
         properties.setProperty("value.serializer", KafkaAvroSerializer.class.getName());
         properties.setProperty("schema.registry.url", "http://127.0.0.1:8081");
 
+        //key = string, value = object
         Producer<String, Customer> producer = new KafkaProducer<String, Customer>(properties);
 
         String topic = "customer-avro";
@@ -39,6 +41,7 @@ public class KafkaAvroJavaProducerV1Demo {
         );
 
         System.out.println(customer);
+
         producer.send(producerRecord, new Callback() {
             @Override
             public void onCompletion(RecordMetadata metadata, Exception exception) {

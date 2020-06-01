@@ -32,9 +32,7 @@ class Student {
     public void setName(String name) {
         this.name = name;
     }
-    public String getUrl(){
-        return "name="+this.name+"&age="+Integer.toString(this.age);
-    }
+
     public int getAge() {
         return age;
     }
@@ -45,6 +43,8 @@ class Student {
         return "Student [ name: "+name+", age: "+ age+ " ]";
     }
 }
+
+
 
 
 class Address{
@@ -111,11 +111,11 @@ public class TestJacksonTutorialspoint {
             System.out.println("scanner contents:"+contents);
             assertTrue(contents.length()>0);
         }
-/*
+
         Student studAck = mapper.readValue(new File("/tmp/student.json"),Student.class);
         System.out.println("studAck:"+studAck.toString());
         assertTrue(studAck.toString().length()>0);
-*/
+
     }
 
     @Test

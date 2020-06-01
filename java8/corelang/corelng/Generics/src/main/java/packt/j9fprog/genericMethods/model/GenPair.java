@@ -9,15 +9,12 @@ public class GenPair<K,V> {
         this.left = left;
         this.right = right;
     }
-
     public K getLeft() {
         return this.left;
     }
-
     public V getRight() {
         return this.right;
     }
-
     @Override
     public String toString(){
         return ("Pair: left:"+this.left +" right:"+this.right);
