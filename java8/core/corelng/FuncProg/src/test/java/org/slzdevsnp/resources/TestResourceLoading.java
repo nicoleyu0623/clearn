@@ -7,6 +7,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -49,10 +50,21 @@ public class TestResourceLoading {
         String content = new String(Files.readAllBytes(path));
         System.out.println(content);
         assertTrue(content.length() > 0);
-
     }
 
-
+    @Test
+    public void givenResource_getProperties() {
+        Properties defaultProps = new Properties();
+        try {
+            defaultProps.load(TestResourceLoading.class.getResourceAsStream("/header_key.properties"));
+        } catch (NullPointerException npe) {
+            throw new IllegalStateException("Could not load application.properties file from classpath");
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("props:"+defaultProps);
+        assertTrue(defaultProps != null);
+    }
 
     //helper method
     private String readFromInputStream(InputStream inputStream)

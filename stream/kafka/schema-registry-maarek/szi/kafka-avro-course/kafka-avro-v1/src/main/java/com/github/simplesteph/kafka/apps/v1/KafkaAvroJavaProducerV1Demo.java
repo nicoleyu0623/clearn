@@ -46,7 +46,7 @@ public class KafkaAvroJavaProducerV1Demo {
             @Override
             public void onCompletion(RecordMetadata metadata, Exception exception) {
                 if (exception == null) {
-                    System.out.println(metadata);
+                    System.out.println("metadata:"+metadata);
                 } else {
                     exception.printStackTrace();
                 }

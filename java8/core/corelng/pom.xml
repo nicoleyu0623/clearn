@@ -16,6 +16,7 @@
         <module>Lombok</module>
         <module>Logging1xx</module>
         <module>Orika</module>
+        <module>DateTimes</module>
     </modules>
 
     <properties>
