@@ -13,7 +13,7 @@
     
     ! demo ex/me/making_pkg/palindrome_proj
     ==== installing with install ======
-    >cd palindrome_rpoj
+    >cd palindrome_proj
     >python setup.py install
     ## this copies palindrome.py into the ~/venv/palindrome_env/lib/python3/site-packages
     >pip list (will show now that palindrome package is isntalled)

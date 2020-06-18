@@ -8,6 +8,7 @@
     <artifactId>kafka-learn</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
+    <name>kafka-learn</name>
     <build>
         <plugins>
             <plugin>

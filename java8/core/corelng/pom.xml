@@ -16,7 +16,6 @@
         <module>Lombok</module>
         <module>Logging1xx</module>
         <module>Orika</module>
-        <module>Intellij</module>
     </modules>
 
     <properties>
