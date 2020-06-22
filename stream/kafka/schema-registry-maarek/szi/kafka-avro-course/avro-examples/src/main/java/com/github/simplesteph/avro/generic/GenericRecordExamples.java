@@ -71,6 +71,7 @@ public class GenericRecordExamples {
             System.out.println(wrong);
         } catch (AvroRuntimeException e){
             System.out.println("Generic Record build did not succeed");  //will be produced
+            System.out.println("AvroRunTimeException message:"+e.getMessage());
             e.printStackTrace();
         }
 

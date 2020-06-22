@@ -11,4 +11,8 @@ public class StaticImportCompletionTest {
        Assertions.assertSame("1","1");
     }
 
+    @Test
+    void SecondTest() {
+    }
+
 }

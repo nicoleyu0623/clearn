@@ -1,4 +1,4 @@
-package org.slzdevsnp.resources;
+package org.slzdevsnp.resourceRead;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,18 +16,26 @@ public class TestResourceLoading {
 
     @Test
     public void testLoadResourceAsStream()  throws IOException{
-
         InputStream is= getClass()
                 .getClassLoader()
                 .getResourceAsStream("address.json");
 
         String content = readFromInputStream(is);
         System.out.println(content);
-
         assertTrue(content.length() > 0);
         assertTrue(is != null);
     }
 
+    @Test
+    public void testLoadResourceDeeperAsStream()  throws IOException{
+        InputStream is= getClass()
+                .getClassLoader()
+                .getResourceAsStream("deeper/deep_address.json");
+        String content = readFromInputStream(is);
+        System.out.println(content);
+        assertTrue(content.length() > 0);
+        assertTrue(is != null);
+    }
 
     @Test
     public void testLoadResourceAsPath()  throws IOException, URISyntaxException {
