@@ -1,13 +1,25 @@
 #osx
 .DS_Store
-#idea projects
+
+### IntelliJ IDEA ###
+*.iws
+*.iml
+*.ipr
 .idea/
 *.iml
 target/
 .ipynb_checkpoints/
 __pycache__/
+
+
+HELP.md
+
 #mvn
 target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
 #gradle
 .gradle
 **/build/
@@ -15,3 +27,27 @@ target/
 #avoid gradle-wrapper.jar ignoring
 !gradle-wrapper.jar
 .gradletasknamecache
+
+
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
