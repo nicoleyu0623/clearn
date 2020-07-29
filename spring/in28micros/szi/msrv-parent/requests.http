@@ -1,0 +1,19 @@
+## requests for chapter 3  Spring cloud services
+
+### currency exchange direct
+GET http://localhost:8000/currency-exchange/from/USD/to/INR
+accept: */*
+
+### currency converter service direct
+GET http://localhost:8100/currency-converter-feign/from/EUR/to/INR/quantity/1000
+accept: */*
+
+
+### currency exchange through zuul api gateway
+GET http://localhost:8765/currency-exchange-service/currency-exchange/from/USD/to/INR
+accept: */*
+
+### currency converter service through zuul
+
+GET http://localhost:8765/currency-conversion-service/currency-converter-feign/from/EUR/to/INR/quantity/1000
+accept: */*
