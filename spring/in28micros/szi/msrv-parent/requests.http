@@ -1,5 +1,6 @@
 ## requests for chapter 3  Spring cloud services
 
+
 ### currency exchange direct
 GET http://localhost:8000/currency-exchange/from/USD/to/INR
 accept: */*
@@ -13,7 +14,27 @@ accept: */*
 GET http://localhost:8765/currency-exchange-service/currency-exchange/from/USD/to/INR
 accept: */*
 
-### currency converter service through zuul
+### currency converter service through ap-gateway zuul
 
-GET http://localhost:8765/currency-conversion-service/currency-converter-feign/from/EUR/to/INR/quantity/1000
+GET http://localhost:8765/currency-conversion-service/currency-converter-feign/from/EUR/to/INR/quantity/10
 accept: */*
+
+
+### limits service (need to run also spring-cloud-config-server app)
+GET http://localhost:8080/limits
+accept: */*
+
+### refresh config
+POST http://localhost:8080/actuator/refresh
+accept: */*
+
+### limits service (need to run also spring-cloud-config-server app)
+GET http://localhost:8081/limits
+accept: */*
+
+
+### limits service (need to run also spring-cloud-config-server app)
+GET http://localhost:8080/fault-tolerance-example
+accept: */*
+
+

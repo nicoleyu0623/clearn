@@ -38,6 +38,8 @@ public class CurrencyConversionController {
 
         CurrencyConversionBean response = responseEntity.getBody();
 
+        log.info("ccy conversion response:{}", response);
+
         return new CurrencyConversionBean(response.getId(), from, to,
                 response.getConversionMultiple(), quantity,
                 quantity.multiply(response.getConversionMultiple()),
