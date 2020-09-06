@@ -158,7 +158,54 @@ demo `l02Streas.parallel.ParallelStreams`
 `Runnable` interface
 Define Runnable task, instantiate an exdecutor than executor.execute  the task
 
+demo `runnable.RunnableDemo` shows thtat threads  order is non-deterministic..
+demo  `callable.CallableDemo` shows  _ExecutorService_   launching  lists of _Callable_ tasks with _Future_ result
 
+#### strategies for sharing data among threads
+* confinement 
+	* don't share data among tasks
+* immutability
+	* share only immutable data structures
+* locking (least attractive)
+	* temporarily block other tasks when carrying out updates 
+	* can be expensive as other tasks wait idly, can be dangerous  (deadlocks )
+	* best left for experts
+demo `raceCondition.Demo` , `raceCondition.Demo2`  shows problems when sharing data between threads
+
+#### parallel algos
+demo `parallelSort.ArraysParallelSortDemo`
+
+####  threadsafe data strucutres
+_ConcurrentHashMap_, _BlockingQueue_
+demo `threadsafeStructures.ConcurrentHashMapDemo` fills map elements from parallel threads
+demo `threadsafeStructures.BlockingQueueTest`  Producer Consumer  pattern with a bounded queue
+
+#### atomic variables
+* thread-safe counters
+* used to build thread-safe data structures
+
+demo `atomic.AtomicLongDemo`  _AtomicLong.incrementAndGet()_
+
+demo `atomic.LongAdderDemo_`  same  logic as in AtomicLongDemo. But executes faster.
+
+#### low-level locks
+
+demo `locks.DockDemo`  _ReentrantLock_
+dmeo `locks.MyQueueDemo`  with _notify()_ , _notifyAll()_  in _MyQueue_ class.
+
+#### interruption
+demo `interruption.InterruptionDemo` shows use of _ExecutorService.invokeAny()_
+
+#### thread local
+demo `threadLocal.ThreadLocalDemo` shows _ThreadLocal.withInitial( lambda)
+
+#### completable futures
+`CompletableFuture<T>`   implements  `CompletableStage<T>` . This allows completable futures to be composed. 
+
+demo `completableFutures.CompletableFutureDemo`  NB!  shows  _CompletableFuture_ usage for async calculations.
+
+##### OS processes
+demo `osprocesses.OsProcessDemo`
 
 ## ch5 Annotations
 
