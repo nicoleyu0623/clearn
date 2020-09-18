@@ -204,8 +204,11 @@ demo `threadLocal.ThreadLocalDemo` shows _ThreadLocal.withInitial( lambda)
 
 demo `completableFutures.CompletableFutureDemo`  NB!  shows  _CompletableFuture_ usage for async calculations.
 
+
 ##### OS processes
 demo `osprocesses.OsProcessDemo`
+
+NB! to do Baeldung Concurrency
 
 ## ch5 Annotations
 

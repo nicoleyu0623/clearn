@@ -110,12 +110,21 @@ public class ZonedDateTimeTest {
         assert(zzdt.toString().equals("2020-06-09T07:43:13.490Z[UTC]"));
     }
 
+
     @Test
-    void givenMillistoZdt() {
+    void givenMillisToZdt() {
         long emilli = 1591688593490L;
         ZonedDateTime zzdt = ZonedDateTime.ofInstant(Instant.ofEpochMilli(emilli),ZoneId.of("Z"));
         System.out.println(String.format("zone dt: %s",String.valueOf(zzdt)));
         assert(zzdt.toString().equals("2020-06-09T07:43:13.490Z"));
+    }
+
+    @Test
+    void givenEpochSecondsToZdt() {
+        long epochsecs = 1599263700L;
+        ZonedDateTime zdt = ZonedDateTime.ofInstant(Instant.ofEpochSecond(epochsecs),ZoneId.of("Z"));
+        System.out.println(String.format("zone dt: %s",String.valueOf(zdt)));
+        assert(zdt.toString().equals("2020-09-04T23:55Z"));
     }
 
     @Test
