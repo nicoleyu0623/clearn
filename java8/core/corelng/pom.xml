@@ -20,6 +20,8 @@
         <module>Intellij</module>
         <module>Xml</module>
         <module>Http</module>
+        <module>restclient-common</module>
+        <module>restclient-wt</module>
     </modules>
 
 
@@ -47,11 +49,31 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-
+           <dependency>
+               <groupId>com.fasterxml.jackson.module</groupId>
+               <artifactId>jackson-module-parameter-names</artifactId>
+               <version>${jackson.version}</version>
+           </dependency>
            <dependency>
                <groupId>com.fasterxml.jackson.dataformat</groupId>
                <artifactId>jackson-dataformat-xml</artifactId>
                <version>${jackson.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.fasterxml.jackson.datatype</groupId>
+               <artifactId>jackson-datatype-jdk8</artifactId>
+               <version>${jackson.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.fasterxml.jackson.datatype</groupId>
+               <artifactId>jackson-datatype-jsr310</artifactId>
+               <version>${jackson.version}</version>
+           </dependency>
+
+           <dependency>
+               <groupId>org.apache.commons</groupId>
+               <artifactId>commons-lang3</artifactId>
+               <version>${commons-lang3.version}</version>
            </dependency>
 
         <dependency>
@@ -67,7 +89,14 @@
            </dependency>
 
 
-           <!--  slfj2  -->
+         <!-- logging -->
+           <dependency>
+               <groupId>org.slf4j</groupId>
+               <artifactId>slf4j-api</artifactId>
+               <version>${org.slf4j.version}</version>
+           </dependency>
+
+           <!--  log4j v2  -->
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-api</artifactId>
@@ -90,6 +119,11 @@
                <version>${orika.version}</version>
            </dependency>
 
+           <dependency>
+               <groupId>commons-codec</groupId>
+               <artifactId>commons-codec</artifactId>
+               <version>1.2</version>
+           </dependency>
 
            <!-- test scope -->
         <dependency>
@@ -111,12 +145,31 @@
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+           <dependency>
+               <groupId>junit</groupId>
+               <artifactId>junit</artifactId>
+               <version>${junit.version}</version>
+               <scope>test</scope>
+           </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>${assertj-core.version}</version>
             <scope>test</scope>
         </dependency>
+           <dependency>
+               <groupId>org.hamcrest</groupId>
+               <artifactId>hamcrest-core</artifactId>
+               <version>${hamcrest.version}</version>
+               <scope>test</scope>
+           </dependency>
+           <dependency>
+               <groupId>org.hamcrest</groupId>
+               <artifactId>hamcrest-library</artifactId>
+               <version>${hamcrest.version}</version>
+               <scope>test</scope>
+           </dependency>
+
     </dependencies>
     </dependencyManagement>
 
@@ -143,6 +196,8 @@
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${org.slf4j.version}</version>
         </dependency>
+
+
         <!-- test -->
         <dependency>
             <groupId>junit</groupId>
@@ -205,16 +260,21 @@
         <guava-version>28.2-jre</guava-version>
         <lombok.version>1.18.8</lombok.version>
         <jakarta-json.version>1.1.6</jakarta-json.version>
-        <jackson.version>2.10.2</jackson.version>
+        <jackson.version>2.10.5</jackson.version>
+
+
+        <!--  apache commons  -->
+        <commons-lang3.version>3.7</commons-lang3.version>
 
         <!-- logging -->
-        <commons-logging.version>1.2</commons-logging.version>
         <org.slf4j.version>1.7.30</org.slf4j.version>
         <log4j2.version>2.13.1</log4j2.version>
 
         <logback.version>1.2.3</logback.version>
 
         <orika.version>1.5.4</orika.version>
+
+        <commons.codec.version>1.2</commons.codec.version>
 
         <!-- testing -->
         <junit-platform.version>1.2.0</junit-platform.version>
@@ -246,11 +306,6 @@
                 <source>${java.version}</source>
                 <target>${java.version}</target>
             </configuration>
-        </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>${maven-surefire-plugin.version}</version>
         </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

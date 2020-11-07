@@ -15,6 +15,7 @@ public class ProducerDemoWithCallback {
         final Logger logger = LoggerFactory.getLogger(ProducerDemoWithCallback.class);
 
         String bootstrapServers = "127.0.0.1:9092";
+        String  egTopic = "first_topic";
 
         // create Producer properties
         Properties properties = new Properties();
@@ -24,10 +25,10 @@ public class ProducerDemoWithCallback {
 
         // create the producer  (msg key,values are strings)
         KafkaProducer<String,String> producer = new KafkaProducer<String, String>(properties);
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 30; i++){
             // create a producer record
             ProducerRecord<String, String> record
-                    = new ProducerRecord<String, String>("first_topic",
+                    = new ProducerRecord<String, String>(egTopic,
                                                         "hellow world "
                                                                 + Integer.toString(i));
             // send data - asynchronous

@@ -1,5 +1,7 @@
 package org.slzdevsnp.tmtrading;
 
+import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
+import org.junit.Ignore;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.slzdevsnp.binding.tmtrading.*;
@@ -16,6 +18,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class TestUnmarshal {
 
     @Test
+    @Ignore
     void givenContractInfoReportUnmarshallPrint()  throws JAXBException {
 
         File file = new File("src/test/resources/ContractInfoRprt.xml");
@@ -45,6 +48,7 @@ public class TestUnmarshal {
     }
 
     @Test
+    @Ignore
     void givenContractInfoReportUnmarshalPrintStream()  throws JAXBException {
 
         File file = new File("src/test/resources/ContractInfoRprt.xml");
@@ -73,8 +77,8 @@ public class TestUnmarshal {
         Assertions.assertEquals(339, contracts.size());
     }
 
-
     @Test
+    @Ignore
     void givenPublicOrderBookRespUnmarshall() throws JAXBException {
         File file = new File("src/test/resources/PblcOrdrBooksResp.xml");
         JAXBContext jaxbContext = JAXBContext.newInstance(PblcOrdrBooksResp.class);
@@ -110,6 +114,7 @@ public class TestUnmarshal {
                 });
         System.out.println("processed " + ob.size() + " order book update messages");
     }
+
 }
 
 

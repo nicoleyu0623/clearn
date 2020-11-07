@@ -17,6 +17,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>${assertj.version}</version>
@@ -143,7 +149,7 @@
         <unirest.version>1.4.9</unirest.version>
         <javalin.version>1.6.0</javalin.version>
         <logging-interceptor.version>3.9.0</logging-interceptor.version>
-        <konghq-unirest.version>3.8.00</konghq-unirest.version>
+        <konghq-unirest.version>3.10.00</konghq-unirest.version>
 
     </properties>
 

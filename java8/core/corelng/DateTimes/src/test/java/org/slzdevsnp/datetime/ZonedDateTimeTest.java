@@ -8,6 +8,9 @@ import java.time.format.DateTimeFormatter;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
 public class ZonedDateTimeTest {
 
     @Test
@@ -101,13 +104,30 @@ public class ZonedDateTimeTest {
     }
 
     @Test
-    public void given_epochmillis_toZdt(){
+    public void given_string_toZdt(){
         String dtstr="2020-06-09T07:43:13.490Z";
         ZonedDateTime zdt = ZonedDateTime.parse(dtstr);
         long e = zdt.toInstant().toEpochMilli();
         ZonedDateTime zzdt = ZonedDateTime.ofInstant(Instant.ofEpochMilli(e),ZoneId.of("UTC"));
         System.out.println(String.format("zone dt: %s",zzdt));
         assert(zzdt.toString().equals("2020-06-09T07:43:13.490Z[UTC]"));
+        System.out.println(zzdt.format(DateTimeFormatter.ISO_ZONED_DATE_TIME));
+    }
+
+    @Test
+    public void given_string_toZdt_toFormattedString(){
+        String dtstr="2020-06-09T07:43:13.49Z";
+        ZonedDateTime zdt = ZonedDateTime.parse(dtstr);
+        System.out.println(zdt.format(DateTimeFormatter.ISO_ZONED_DATE_TIME));
+        System.out.println(zdt.toString());
+        assert(zdt.toString().equals("2020-06-09T07:43:13.490Z"));
+
+        final DateTimeFormatter dateTimeFormatter =
+                DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+
+        System.out.println("with formatter: " + zdt.format(dateTimeFormatter));
+        assert(zdt.format(dateTimeFormatter).equals("2020-06-09T07:43:13.490Z"));
+
     }
 
 

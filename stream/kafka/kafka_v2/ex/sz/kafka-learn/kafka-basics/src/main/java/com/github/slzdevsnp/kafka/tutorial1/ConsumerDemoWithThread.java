@@ -25,13 +25,13 @@ public class ConsumerDemoWithThread {
             Logger logger = LoggerFactory.getLogger(ConsumerDemoWithThread.class);
             String bootstrapServers = "127.0.0.1:9092";
             String groupId = "my-sixth-application";
-            String topic = "first_topic";
+            String ingTopic = "first_topic";
 
             CountDownLatch latch = new CountDownLatch(1);
             logger.info("creating the consumer thread");
             Runnable myConsumerRunnable = new ConsumerRunnable(bootstrapServers,
                     groupId,
-                    topic,
+                    ingTopic,
                     latch
             );
             Thread myThread = new Thread(myConsumerRunnable);

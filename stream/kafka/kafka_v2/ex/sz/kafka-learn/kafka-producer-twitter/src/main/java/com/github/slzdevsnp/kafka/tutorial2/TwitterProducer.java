@@ -23,6 +23,8 @@ import java.util.concurrent.TimeUnit;
 
 public class TwitterProducer {
 
+    static String bootstrapServers = "127.0.0.1:9092";
+    static String egTopic = "twitter_tweets";
     Logger logger = LoggerFactory.getLogger(TwitterProducer.class.getName());
 
     // put this values in private gist
@@ -31,18 +33,15 @@ public class TwitterProducer {
     String token = "34393909-WQ1MDswWeLWelDFiS0m5hSHRIEhCR9WyuPelXd1fR";
     String secret = "KoX8wTsuyokIJ1BYu5oqUv8lf8DVra03Sak8hxH4KY8Dj";
 
-    /*
-    String consumerKey = "";
-    String consumerSecret = "";
-    String token = "";
-    String secret = "";
-    */
+
 
     //List<String> terms = Lists.newArrayList("kafka");
-    List<String> terms = Lists.newArrayList("bitcoin", "java", "usa", "politics","sport", "soccer");
+    List<String> terms = Lists.newArrayList("bitcoin", "java", "usa",
+            "politics","sport", "soccer");
     //List<String> terms = Lists.newArrayList("bitcoin");
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         new TwitterProducer().run();
     }
 
@@ -71,7 +70,7 @@ public class TwitterProducer {
         }));
 
 
-        //loop to send tweets to kafka  (testing
+        //loop to send tweets to kafka
         while (!client.isDone()) {
             String msg = null;
             try {
@@ -82,7 +81,7 @@ public class TwitterProducer {
             }
             if (msg != null) {
                 logger.info(msg);
-                producer.send(new ProducerRecord<String, String>("twitter_tweets",
+                producer.send(new ProducerRecord<String, String>(egTopic,
                             null, msg), new Callback() {
                     @Override
                     public void onCompletion(RecordMetadata recordMetadata, Exception e) {
@@ -130,7 +129,7 @@ public class TwitterProducer {
 
     private KafkaProducer<String,String> createKafkaProducer() {
 
-        String bootstrapServers = "127.0.0.1:9092";
+
 
         // create Producer properties
         Properties properties = new Properties();

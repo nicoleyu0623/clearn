@@ -12,26 +12,32 @@ import java.util.Properties;
 
 public class StreamsFilterTweets {
 
+    static String bootstrapServers="127.0.0.1:9092";
+    static String appId="demo-kafka-streams";
+    static String ingTopic ="twitter_tweets";
+    static String routeTopic="important_tweets";
 
     public static void main(String[] args) {
         //create properties
         Properties properties = new Properties();
-        properties.setProperty(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
-        properties.setProperty(StreamsConfig.APPLICATION_ID_CONFIG, "demo-kafka-streams");
-        properties.setProperty(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.StringSerde.class.getName());
-        properties.setProperty(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.StringSerde.class.getName());
+        properties.setProperty(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+        properties.setProperty(StreamsConfig.APPLICATION_ID_CONFIG, appId);
+        properties.setProperty(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG,
+                Serdes.StringSerde.class.getName());
+        properties.setProperty(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG,
+                Serdes.StringSerde.class.getName());
 
 
         //create topology
         StreamsBuilder streamsBuilder = new StreamsBuilder();
 
-        // input topic
-        KStream<String, String> inputTopic = streamsBuilder.stream("twitter_tweets");
+        int folowersThreshold = 10000;
+        KStream<String, String> inputTopic = streamsBuilder.stream(ingTopic);
         KStream<String, String> filteredStream = inputTopic.filter(
                 // filter for tweets which has a user of over 10000 followers
-                (k, jsonTweet) ->  extractUserFollowersInTweet(jsonTweet) > 10000
+                (k, jsonTweet) ->  extractUserFollowersInTweet(jsonTweet,folowersThreshold) > folowersThreshold
         );
-        filteredStream.to("important_tweets"); //resent to a new topic
+        filteredStream.to(routeTopic); //resent to a new topic
         //build topology
         KafkaStreams kafkaStreams = new KafkaStreams(
                 streamsBuilder.build(),
@@ -39,14 +45,16 @@ public class StreamsFilterTweets {
         );
         //start our streams appliaction
         kafkaStreams.start();
+        System.out.println("listening to the kafka filtered streams from topic :"+ ingTopic);
     }
 
     private static JsonParser jsonParser = new JsonParser();
 
-    private static Integer extractUserFollowersInTweet(String tweetJson){
+    private static Integer extractUserFollowersInTweet(String tweetJson, int threshold){
+        Integer nfollowers = null;
         // gson library
         try {
-            return jsonParser.parse(tweetJson)
+            nfollowers = jsonParser.parse(tweetJson)
                     .getAsJsonObject()
                     .get("user")
                     .getAsJsonObject()
@@ -56,5 +64,10 @@ public class StreamsFilterTweets {
         catch (NullPointerException e){
             return 0;
         }
+        if (nfollowers.intValue() > threshold){
+            System.out.println("current tweet with followers " + nfollowers
+            + " copied to importantTweets");
+        }
+        return nfollowers;
     }
 }
