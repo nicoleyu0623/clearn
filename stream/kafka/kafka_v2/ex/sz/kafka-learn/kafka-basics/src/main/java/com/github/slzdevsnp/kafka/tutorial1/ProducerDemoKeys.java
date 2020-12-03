@@ -5,6 +5,7 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
@@ -32,6 +33,10 @@ public class ProducerDemoKeys {
             String key = "id_" + Integer.toString(i);
             // create a producer record
             ProducerRecord<String, String> record = new ProducerRecord<String, String>(topic,key,value);
+            //add header values to kafka record
+            record.headers().add("client_id", key.getBytes(StandardCharsets.UTF_8));
+            record.headers().add("client_data", ("dataxx"+Integer.toString(i)).getBytes(StandardCharsets.UTF_8));
+
 
             logger.info("Key: " + key); // log the key
             ///  checking in the log

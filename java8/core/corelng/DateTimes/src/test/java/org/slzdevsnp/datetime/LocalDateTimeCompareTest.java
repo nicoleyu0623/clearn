@@ -37,7 +37,6 @@ public class LocalDateTimeCompareTest {
                 ,lt,durationMinutes), is(0L));
     }
 
-
     @Test
     public void givenDayOfWeekRangeCheckDateTimeIn() {
         LocalTime lt = LocalTime.parse("22:00");

@@ -77,4 +77,20 @@ public class LocalDateTimeTest {
         ldt  = ldt.plusHours(lt.getHour()).plusMinutes(lt.getMinute());
         assertThat(ldt.toString(), is("2020-11-06T22:01"));
     }
+
+    @Test
+    public void givenZstrparseLocalDateTime() {
+        String dstr = "2020-10-28T00:30:00Z";
+        //LocalDateTime ldt1 = LocalDateTime.parse(dstr); ///exception
+        LocalDateTime ldt2 = LocalDateTime.parse(dstr, DateTimeFormatter.ISO_DATE_TIME);
+        LocalDateTime ldt3 = LocalDateTime.parse(dstr, DateTimeFormatter.ISO_ZONED_DATE_TIME);
+        //LocalDateTime ldt4 = LocalDateTime.parse(dstr, DateTimeFormatter.ISO_LOCAL_DATE); //exception
+        //System.out.println(ldt1);
+        System.out.println(ldt2);
+        System.out.println(ldt3);
+        //System.out.println(ldt4);
+
+        //assertThat(ldt1, not(nullValue()));
+    }
+
 }

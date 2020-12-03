@@ -56,7 +56,12 @@ public class ZonedDateTimeTest {
         assertTrue(zdt != null);
     }
 
-
+    @Test
+    void givenStringZutcParseZonedDateTime() {
+        String sdt = "2020-10-26T19:13:14.376Z[UTC]";
+        ZonedDateTime zdt = ZonedDateTime.parse(sdt,DateTimeFormatter.ISO_ZONED_DATE_TIME);
+        System.out.println(zdt);
+    }
 
     @Test
     public void testParsingDateTimeOffsetPlus_Alt() {
@@ -78,6 +83,15 @@ public class ZonedDateTimeTest {
         assert(zdt.getOffset().equals(ZoneOffset.UTC));
         assert(zdt!=null);
     }
+
+    @Test
+    void givenZdtimeparseZonedDateTime() {
+        String dstr="2020-11-05T09:11:50Z";
+        ZonedDateTime zdt1 = ZonedDateTime.parse(dstr);
+        System.out.println("zdt1:"+zdt1);
+    }
+
+
 
     @Test
     public void given_ZUTCStr_epochmillis(){
@@ -114,6 +128,8 @@ public class ZonedDateTimeTest {
         System.out.println(zzdt.format(DateTimeFormatter.ISO_ZONED_DATE_TIME));
     }
 
+
+
     @Test
     public void given_string_toZdt_toFormattedString(){
         String dtstr="2020-06-09T07:43:13.49Z";
@@ -140,6 +156,13 @@ public class ZonedDateTimeTest {
     }
 
     @Test
+    void givenMillisToZdtFormat() {
+        long emilli = 1603836000000L;
+        ZonedDateTime zdt = ZonedDateTime.ofInstant(Instant.ofEpochMilli(emilli), ZoneId.of("Z"));
+        assert (zdt.format(DateTimeFormatter.ISO_ZONED_DATE_TIME).equals("2020-10-27T22:00:00Z"));
+    }
+
+        @Test
     void givenEpochSecondsToZdt() {
         long epochsecs = 1599263700L;
         ZonedDateTime zdt = ZonedDateTime.ofInstant(Instant.ofEpochSecond(epochsecs),ZoneId.of("Z"));
@@ -152,5 +175,12 @@ public class ZonedDateTimeTest {
         ZonedDateTime zdt = LocalDateTime.now().atZone(ZoneId.of("Z"));
         System.out.println(String.format("zdt of now:%s",zdt.toString()));
         assert(zdt!=null);
+    }
+
+    @Test
+    void givenLocalDateCheckDayLightSaving() {
+        LocalDate ld = LocalDate.of(2020,03,29);
+        LocalDateTime ldt = ld.atStartOfDay();
+        ZonedDateTime zdt = ldt.atZone(ZoneId.of("CET"));
     }
 }

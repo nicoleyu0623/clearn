@@ -22,6 +22,7 @@
         <module>Http</module>
         <module>restclient-common</module>
         <module>restclient-wt</module>
+        <module>Streaming</module>
     </modules>
 
 

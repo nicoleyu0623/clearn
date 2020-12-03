@@ -102,7 +102,8 @@ public class WattsightClientTest {
         }
     }
 
-//    @Test
+    @Ignore
+    @Test
     public void shouldGetTaggedInstanceButHandleInvalidSelection() {
         TaggedInstancesClient.TaggedInstances response = client.taggedInstancesClient().tagged(
                 InstanceTaggedRequest.builder()
@@ -110,15 +111,15 @@ public class WattsightClientTest {
                         .build()
         );
 
-//        assertThat(response.getHttpError(), is(Boolean.TRUE));
+     // assertThat(response.getHttpError(), is(Boolean.TRUE));
         assertThat(response.getRaw(), is(notNullValue()));
         assertThat(response.getHttpErrorMessage(), is(nullValue()));
         assertThat(response.getHttpResponseCode(), is(400));
 
     }
 
-    @Test
     @Ignore
+    @Test
     public void shouldGetTaggedInstance() {
         TaggedInstancesClient.TaggedInstances response = client.taggedInstancesClient().tagged(
                 InstanceTaggedRequest.builder()
@@ -137,8 +138,9 @@ public class WattsightClientTest {
     }
 
 
-    @Test
+
     @Ignore
+    @Test
     public void test() {
 
         TaggedInstancesClient.TaggedInstances response = client.taggedInstancesClient().tagged(
@@ -155,8 +157,9 @@ public class WattsightClientTest {
         log.info("Tag - {}", response.getRawJson().get(0).findPath("issue_date").asText());
     }
 
-    @Test
+
     @Ignore
+    @Test
     public void shouldGetTimeseriesType() {
 
         SeriesClient.SeriesResponse response = client.seriesClient()
@@ -171,7 +174,8 @@ public class WattsightClientTest {
 
     }
 
-    //    @Test
+    @Ignore
+    @Test
     public void shouldGetTaggedInstanceWithData() {
         TaggedInstancesClient.TaggedInstances response = client.taggedInstancesClient().tagged(
                 InstanceTaggedRequest.builder()
