@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  kafdrop:
+    image: obsidiandynamics/kafdrop
+    container_name: kafdrop
+    ports:
+      - "9000:9000"
+    environment:
+      KAFKA_BROKERCONNECT: "broker:29092"
+      JVM_OPTS: "-Xms16M -Xmx48M -Xss180K -XX:-TieredCompilation -XX:+UseStringDeduplication -noverify"
+      SCHEMAREGISTRY_CONNECT: "http://schema-registry:8081"
+    networks:
+      - back_nw-base
+
+networks:
+  back_nw-base:
+    external: true
