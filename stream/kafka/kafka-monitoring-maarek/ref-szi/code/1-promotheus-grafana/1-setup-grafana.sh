@@ -4,6 +4,9 @@
 
 cd 
 wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-5.2.1.linux-amd64.tar.gz 
+#latest version
+wget https://dl.grafana.com/oss/release/grafana-7.3.4.linux-amd64.tar.gz
+
 tar -zxvf grafana-*.gz 
 rm grafana-*.gz 
 mv grafana-*/ grafana

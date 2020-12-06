@@ -1,0 +1,17 @@
+
+
+systemd service setup
+in /stream/kafka/kafka-monitoring-maarek
+with inclusion of system d service from  multiple docker-compose.yml on administration machine
+
+
+aws cloud formation stacks
+in in /stream/kafka/kafka-monitoring-maarek
+with setup of kafka cluster on aws ec2 instances
+
+
+setup prometheus on aws ec2  
+in /stream/kafka/kafka-monitoring-maarek
+with additional setup of docker@zoonavigator, kafka-manager, linkedin kafka-monitor 
+
+

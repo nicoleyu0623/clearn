@@ -32,3 +32,4 @@ sudo yum install -y java-1.8.0-openjdk-devel
 ./bin/kafka-monitor-start.sh config/kafka-monitor.properties
 # Setup as SystemD component
 sudo nano /etc/systemd/system/kafka-monitor.service
+sudo systemctl start kafka-monitor 
