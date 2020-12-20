@@ -310,6 +310,7 @@ umbrella of projects
 **fx service**  
 
 ![](img/fx_serv_diag1.png)
+![alt](/assets/in28micros/fx_serv_diag1.png)
 
 Components:
 * naming server (Eureka)
