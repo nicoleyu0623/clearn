@@ -16,13 +16,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.2.RELEASE</version>
+        <version>2.3.7.RELEASE</version>
     </parent>
 
     <modules>
-    <module>scheduling-tasks</module>
+        <module>scheduling-tasks</module>
+        <module>gs-rest-service</module>
+        <module>gs-consuming-rest</module>
     </modules>
-
 
     <properties>
         <java.version>11</java.version>
