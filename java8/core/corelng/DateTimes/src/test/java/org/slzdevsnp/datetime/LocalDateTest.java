@@ -15,13 +15,13 @@ public class LocalDateTest {
         System.out.println("localdate: "+ dtnow);
     }
 
+
     @Test
     public void givenFormatterMakeLocalDate() {
         DateTimeFormatter formatterCH
                 = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         DateTimeFormatter formatterAltUS
                 = DateTimeFormatter.ofPattern("yyyy.MM.dd");
-
         String todayStr = "02.10.2020";
         LocalDate parsedDate = LocalDate.parse(todayStr, formatterCH);
         assertThat(parsedDate.toString(), is("2020-10-02"));
