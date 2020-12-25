@@ -23,6 +23,7 @@
         <module>scheduling-tasks</module>
         <module>gs-rest-service</module>
         <module>gs-consuming-rest</module>
+        <module>gs-payroll</module>
     </modules>
 
     <properties>
