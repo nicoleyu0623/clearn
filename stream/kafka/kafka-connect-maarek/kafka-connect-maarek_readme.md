@@ -274,16 +274,19 @@ select count(*) from "public"."demo-3-twitter" limit 10;
 if the source is running the count of messages in the table will be increasing
 
 ## Ch8 writing kafka connector GitHubSourceConnector
-* Dependencies
+#### Plan
+* * Dependencies
 * ConfigDef
 * Connector
 * Schema & Struct
 * Source Partition & Source Offsets
 * Task
 
-source : https://github.com/simplesteph/kafka-connect-github-source/tree/v1.1
+steph wrote a connector for education pupsposes connector source : https://github.com/simplesteph/kafka-connect-github-source/tree/v1.1
 
-goal: create a soruce stream of issues and pull requests from a repository of our choice
+Download it to local dir : `clearn/stream/kafka/kafka-connect-maarek/szi/ch8-writeconnector/kafka-connect-github-source-1.1`
+
+Connector task: create a source  stream of issues and pull requests from a repository of our choice
 The stream will pick up any update to any issues,  will use a Rest Client to Query that API
 
 github api:
@@ -291,29 +294,77 @@ https://developer.github.com/v3/issues/#list-issues-for-a-repository
 
 kubernetes repo used as source example https://github.com/kubernetes/kubernetes
 
-e.g.
-https://api.github.com/repos/kubernetes/kubernetes/issues
-with params
-https://api.github.com/repos/kubernetes/kubernetes/issues?state=closed&since=2017-01-01T00:00:00
+Example of using api requests
+.
+```bash
+## get list of open issues
+curl -s -H "Accept: application/vnd.github.v3+json" -X GET https://api.github.com/repos/kubernetes/kubernetes/issues | jq
+
+## get list of closed issues since a cetain date
+curl -s -H "Accept: application/vnd.github.v3+json" -X GET https://api.github.com/repos/kubernetes/kubernetes/issues?state=closed&since=2017-01-01T00:00:00Z | jq
+```
+
 
 kafka connect maven artifact:
 https://github.com/jcustenborder/kafka-connect-archtype
 Intellij create new maven project from maven artifact id:
 course maven artifact:
 **groupId: io.confluent.maven,  artifact: kafka-connect-quickstart version: 0.10.0.0**
-latest:
-```
- -DarchetypeGroupId=com.github.jcustenborder.kafka.connect \
+
+latest jcusterborder params
+
+```maven
+mvn archetype:generate \
+    -DarchetypeGroupId=com.github.jcustenborder.kafka.connect \
     -DarchetypeArtifactId=kafka-connect-quickstart \
     -DarchetypeVersion=2.4.0
 ```
-Work through the maarelk's project source in kafka-connect-github-source-1.1
 
-once the project mvn compiles and packages,  run
+#### Create a new project for connector
+Intellij: new Project: maven : create from archetype : Add archetype
+
+* specify (not the latest from jcusterborder)
+	* GroupId :  io.confluent.maven
+	* ArtifactId, kafka-connect-quickstart
+	* Version  0.10.0.0
+* in the list of archetype observe the newly added archetype
+* press Next
+* specify:
+	* name: tutorial-connect-github-project
+ 	* location: `~/repos/clearn/stream/kafka/kafka-connect-maarek/szi/ch8-writeconnector/tutorial-connect-github-project`
+	* own groupId: org.szi.kafka
+	* artifact: tutorial-connect-github-project
+
+
+The intellij project is created and the  build  on generated pom.xml is launched. 
+Check the generated pom.xml  modifiy kafka version to *0.10.2.0* or  *2.4.0*
+
+For the source  connector you need to modify under src classes:  MySourceConnector,  MySourceConnectorConfig,  MySourceTask, VersionUtil
+
+
+##### Work through the maarelk's project source in kafka-connect-github-source-1.1
+Copy classes from maareks's project kafka-connect-github-source-1.1  to your project: tutorial-connect-github-project 
+
+* GitHubSourceConnectorConfig
+	* define the connnector config  with 2 fields having validators
+	* check  the corresponding test
+
+* GitHubSourceconnector
+	* main connector class 	which has a bunch of methods to implement
+	* version() ; start(Map map),  taskClass()  taskConfigs(),  stop()  config()
+
+* config/GitHubSourceConnectorExample.properties    shows a reference config for a source connector
+
+
+
+
+
+Once the project mvn compiles and packages,  run
 
 `./run.sh`  to build and start a docker with standalone deployed connector . check its source as well as a Dockerfile . 
 
- __deploying connnector on landoop cluster__
+
+ ##### deploying connnector on landoop cluster
 
 start a landoop docker image with your connector mapped as a volume
 
