@@ -24,6 +24,7 @@ public class GitHubSourceConnector extends SourceConnector {
     config = new GitHubSourceConnectorConfig(map);
   }
 
+  // Task class does the real job
   @Override
   public Class<? extends Task> taskClass() {
     return GitHubSourceTask.class;
@@ -33,7 +34,7 @@ public class GitHubSourceConnector extends SourceConnector {
   public List<Map<String, String>> taskConfigs(int i) {
     // Define the individual task configurations that will be executed.
     ArrayList<Map<String, String>> configs = new ArrayList<>(1);
-    configs.add(config.originalsStrings());
+    configs.add(config.originalsStrings()); //method from AbstractConfig parent class
     return configs;
   }
 
@@ -41,6 +42,7 @@ public class GitHubSourceConnector extends SourceConnector {
   public void stop() {
     // Do things that are necessary to stop your connector.
     // nothing is necessary to stop for this connector
+    //usually used to close resources such as files, db connections,  etc
   }
 
   @Override

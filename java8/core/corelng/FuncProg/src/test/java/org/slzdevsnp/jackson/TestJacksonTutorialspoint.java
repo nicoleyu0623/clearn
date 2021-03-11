@@ -2,9 +2,11 @@ package org.slzdevsnp.jackson;
 
 
 import com.fasterxml.jackson.core.*;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.*;
 
+import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,10 +14,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Scanner;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -25,6 +24,10 @@ class Student {
     private int age;
 
     public Student(){}
+    public Student(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
 
     public String getName() {
         return name;
@@ -83,6 +86,18 @@ public class TestJacksonTutorialspoint {
     static final String jsonString1  = "{\"name\":\"Mahesh\", \"age\":21}";
     static final String jsonStudent = "{\"name\":\"Mahesh Kumar\",  \"age\":21,\"verified\":false,\"marks\": [100,90,85],\"range\":{\"left\":11.11,\"right\":19.99}}";
 
+
+    public static ObjectMapper createObjectMapper() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        objectMapper.registerModule(new ParameterNamesModule());
+        objectMapper.registerModule(new Jdk8Module());
+        objectMapper.registerModule(new JavaTimeModule());
+        return objectMapper;
+    }
+
     @Test
     void testMarshallStudentInst() throws JsonProcessingException {
 
@@ -97,6 +112,47 @@ public class TestJacksonTutorialspoint {
         System.out.println(jsonStringIn);
         assertTrue(jsonStringIn.startsWith("{"));
     }
+
+    @Test
+    void testMarshallSerializeToJson() throws JsonProcessingException {
+        ObjectMapper  mapper =  TestJacksonTutorialspoint.createObjectMapper();
+        Student stud1 =  new Student("Lucas", 21);
+        Student stud2 = new Student("Michael", 22);
+        List<Student> studs = new ArrayList<>();
+        studs.add(stud1);
+        studs.add(stud2);
+        String jsonString1 = mapper.writeValueAsString(stud1);
+        System.out.println("student 1 as : " + jsonString1);
+        assertTrue(jsonString1.length() > 0);
+        String jsonStringLst = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(studs);
+        System.out.println("student list  as json: " + jsonStringLst);
+        assertTrue(jsonStringLst.length() > 0);
+
+    }
+
+    @Test
+    void testSerialize2Json() {
+        ObjectMapper  mapper =  TestJacksonTutorialspoint.createObjectMapper();
+        Student stud1 =  new Student("Lucas", 21);
+        Student stud2 = new Student("Michael", 22);
+        List<Student> studs = new ArrayList<>();
+        studs.add(stud1);
+        studs.add(stud2);
+        String jsonContents = serialize2Json(mapper, studs);
+        System.out.println("json str: "+jsonContents);
+        assertTrue(jsonContents.length() > 0);
+    }
+
+    private String serialize2Json(ObjectMapper mapper, Object o)  {
+        String result = null;
+        try {
+            result = mapper.writeValueAsString(o);
+        } catch (JsonProcessingException e) {
+            System.out.println("Json Processing exception " + e.getMessage());
+        }
+        return result;
+    }
+
     @Test
     void TestAgainSeriaizationDecerializationFromFile() throws JsonProcessingException, IOException{
         Student stu = new Student();
@@ -115,8 +171,11 @@ public class TestJacksonTutorialspoint {
         Student studAck = mapper.readValue(new File("/tmp/student.json"),Student.class);
         System.out.println("studAck:"+studAck.toString());
         assertTrue(studAck.toString().length()>0);
-
     }
+
+
+
+
 
     @Test
     void TestSerializationFromString() throws JsonProcessingException, IOException{

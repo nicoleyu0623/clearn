@@ -57,7 +57,7 @@ public class GitHubSourceConnectorConfigTest {
     }
   }
 
-  @Test
+   @Test
   public void validateBatchSize() {
     Map<String, String> config = initialConfig();
     config.put(BATCH_SIZE_CONFIG, "-1");

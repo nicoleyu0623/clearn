@@ -32,6 +32,17 @@ public class LocalDateTimeTest {
         assertThat (dtCrez , not(nullValue()));
     }
 
+    @Test
+    public void shouldParsePointConnectString() {
+        final String dtstr = "17.02.2021 18:00:00";
+
+        DateTimeFormatter formatter
+                = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
+        LocalDateTime  dt = LocalDateTime.parse(dtstr, formatter);
+        System.out.println("dt: " +dt.format(formatter));
+        assertThat(dt, isA(LocalDateTime.class));
+
+    }
 
     @Test
     public void testFormattedZonedNow(){
@@ -89,8 +100,22 @@ public class LocalDateTimeTest {
         System.out.println(ldt2);
         System.out.println(ldt3);
         //System.out.println(ldt4);
-
         //assertThat(ldt1, not(nullValue()));
     }
 
+    @Test
+    public void givenStringParseLocalDateTime() {
+        String ystr="2020";
+        String day="2021-01-08";
+        String yystr = ystr.concat("-01-01T00:00:00Z");
+        System.out.println("yystr " + yystr);
+        LocalDateTime ldty = LocalDateTime.parse(yystr, DateTimeFormatter.ISO_DATE_TIME);
+        LocalDateTime ldtd = LocalDateTime.parse(day.concat("T00:00:00Z") , DateTimeFormatter.ISO_DATE_TIME);
+
+        assertThat(ldty, isA(LocalDateTime.class));
+        assertThat(ldtd, isA(LocalDateTime.class));
+
+        System.out.println("ldty " + ldty);
+        System.out.println("ldtd " + ldtd);
+    }
 }

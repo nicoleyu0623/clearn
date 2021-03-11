@@ -161,7 +161,7 @@ public class GitHubSourceTask extends SourceTask {
             Struct prStruct = new Struct(PR_SCHEMA)
                     .put(PR_URL_FIELD, pullRequest.getUrl())
                     .put(PR_HTML_URL_FIELD, pullRequest.getHtmlUrl());
-            valueStruct.put(PR_FIELD, prStruct);
+            valueStruct.put(PR_FIELD, prStruct);  //!NB
         }
 
         return valueStruct;

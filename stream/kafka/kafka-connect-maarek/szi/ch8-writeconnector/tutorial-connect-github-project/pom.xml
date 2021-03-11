@@ -10,9 +10,14 @@
     <name>tutorial-connect-github-project</name>
 
     <properties>
-       <!-- <kafka.version>0.10.2.0-cp1</kafka.version> -->
+        <!-- <kafka.version>0.10.2.0-cp1</kafka.version> -->
         <kafka.version>2.4.0</kafka.version>
+        <unirest.version>1.4.9</unirest.version>
         <junit.version>4.12</junit.version>
+        <commons-io.version>2.4</commons-io.version>
+        <hamcrest.version>2.2</hamcrest.version>
+        <org.slf4j.version>1.7.30</org.slf4j.version>
+        <lombok.version>1.18.8</lombok.version>
     </properties>
 
     <dependencies>
@@ -22,22 +27,60 @@
             <version>${kafka.version}</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.mashape.unirest</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>${unirest.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${org.slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${org.slf4j.version}</version>
+        </dependency>
+
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.25</version>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>${hamcrest.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.mashape.unirest</groupId>
-            <artifactId>unirest-java</artifactId>
-            <version>1.4.9</version>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <version>${hamcrest.version}</version>
+            <scope>test</scope>
         </dependency>
+
+
     </dependencies>
 
     <build>

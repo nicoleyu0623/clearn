@@ -33,7 +33,7 @@ public class GitHubSourceTaskTest {
 
 
     @Test
-    public void test() throws UnirestException {
+    public void shouldCallNextIssueApi() throws UnirestException {
         gitHubSourceTask.config = new GitHubSourceConnectorConfig(initialConfig());
         gitHubSourceTask.nextPageToVisit = 1;
         gitHubSourceTask.nextQuerySince = Instant.parse("2017-01-01T00:00:00Z");

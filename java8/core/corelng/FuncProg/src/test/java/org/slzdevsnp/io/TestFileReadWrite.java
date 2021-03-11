@@ -1,6 +1,8 @@
 package org.slzdevsnp.io;
 
 
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -32,6 +34,27 @@ public class TestFileReadWrite {
 
         assertThat(file.exists(), is(true));
 
+        System.out.println("abs path: " + file.getAbsolutePath());
+        System.out.println(" file size " +file.length() );
+    }
+
+    @Test
+    void givenFileWriteAndDeleteIt() throws IOException {
+        char SEPARATOR = ',';
+        String fname="/tmp/" + RandomStringUtils.randomAlphanumeric (6) + "_test.csv";
+        File file = new File(fname);
+        assertThat(file.exists(), is(false));
+        FileWriter fileWriter = new FileWriter(file,false);
+        System.out.println("new file created: " + file.getAbsolutePath());
+        String[] params = {"0","ccdd"};
+        writeLine(fileWriter,params,SEPARATOR);
+        params = new String[]{"1", "xxxx"};
+        writeLine(fileWriter,params,SEPARATOR);
+        fileWriter.flush();
+        fileWriter.close();
+        assertThat(file.exists(), is(true));
+        boolean deleteStatus = file.delete();
+        assertThat(file.exists(), is(false));
     }
 
     /**

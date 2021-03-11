@@ -284,6 +284,8 @@ if the source is running the count of messages in the table will be increasing
 
 steph wrote a connector for education pupsposes connector source : https://github.com/simplesteph/kafka-connect-github-source/tree/v1.1
 
+Checkout it to `~/repos/_t/maarek/kafka-connect-github-source`
+
 Download it to local dir : `clearn/stream/kafka/kafka-connect-maarek/szi/ch8-writeconnector/kafka-connect-github-source-1.1`
 
 Connector task: create a source  stream of issues and pull requests from a repository of our choice
@@ -296,6 +298,7 @@ kubernetes repo used as source example https://github.com/kubernetes/kubernetes
 
 Example of using api requests
 .
+
 ```bash
 ## get list of open issues
 curl -s -H "Accept: application/vnd.github.v3+json" -X GET https://api.github.com/repos/kubernetes/kubernetes/issues | jq
@@ -303,7 +306,6 @@ curl -s -H "Accept: application/vnd.github.v3+json" -X GET https://api.github.co
 ## get list of closed issues since a cetain date
 curl -s -H "Accept: application/vnd.github.v3+json" -X GET https://api.github.com/repos/kubernetes/kubernetes/issues?state=closed&since=2017-01-01T00:00:00Z | jq
 ```
-
 
 kafka connect maven artifact:
 https://github.com/jcustenborder/kafka-connect-archtype
@@ -335,14 +337,13 @@ Intellij: new Project: maven : create from archetype : Add archetype
 	* own groupId: org.szi.kafka
 	* artifact: tutorial-connect-github-project
 
-
 The intellij project is created and the  build  on generated pom.xml is launched. 
 Check the generated pom.xml  modifiy kafka version to *0.10.2.0* or  *2.4.0*
 
 For the source  connector you need to modify under src classes:  MySourceConnector,  MySourceConnectorConfig,  MySourceTask, VersionUtil
 
 
-##### Work through the maarelk's project source in kafka-connect-github-source-1.1
+#### Work through the maarelk's project source in kafka-connect-github-source-1.1
 Copy classes from maareks's project kafka-connect-github-source-1.1  to your project: tutorial-connect-github-project 
 
 * GitHubSourceConnectorConfig
@@ -350,26 +351,122 @@ Copy classes from maareks's project kafka-connect-github-source-1.1  to your pro
 	* check  the corresponding test
 
 * GitHubSourceconnector
-	* main connector class 	which has a bunch of methods to implement
-	* version() ; start(Map map),  taskClass()  taskConfigs(),  stop()  config()
+	* main connector class 	which has a bunch of boilerplate methods to implement
+```
+		* public String version()
+		* start(Map<String,String> map)
+		* public Class<? extends Task> taskClass ()
+		*  public List<Map<String,String>>  taskConfigs(int i),
+		* stop()  
+		*  publicConfigDev config()
+```
+The most interesting is taskConfigs()
 
-* config/GitHubSourceConnectorExample.properties    shows a reference config for a source connector
+`config/GitHubSourceConnectorExample.properties`    shows a reference config for a source connector
 
+org.szi.kafka.GitHubSourceConnectorTest  is a test for Connect class. 
 
+#### Write a schema
 
+The Url https://developer.github.com/v3/issues/#list-issues-for-a-repository
+shows a structure of a reponses and helps to define a schema
 
+`GitHubSchemas` shows selected fields for different schema
+
+In `GitHubSchemas`  observe  how `VALUE_SCHEMA` contains  `USER_SCHEMA`  and `PR_SCHEMA`. 
+
+KEY_SCHEMA and VALUE_SCHEMA are defined and will be used to convert responses from GitHubAPI  with http client. 
+
+###### Data Model
+
+Model POJOs are in the `org.szi.kafka.model` package
+* `User` is a big Entity and has  method `fromJson(JSONObject jsonObject)`
+* `Issue` is a biggest Entity,  has fields for `User` and `PullRequest`
+check test `org.szi.kafka.model.UserTest`  and `IssueTest`
 
 Once the project mvn compiles and packages,  run
 
 `./run.sh`  to build and start a docker with standalone deployed connector . check its source as well as a Dockerfile . 
 
+###### GitHubApi  Http client
+Uses unirest  library
+class `GitHubAPIHttpClient`
+Important methods:
+	*  getNextIssues()  //makes a rest calll and interprets response with recursive calls
+	*  getNextIssuesAPI() //actual http call with unirest 
+	*  constructUrl()  //constructs a string for rest endpoint with parameters
 
- ##### deploying connnector on landoop cluster
+Check test `GitHubAPIHttpClientTest` which I have added
+
+NB!  the dependency com.mashape.unirest.unirest-java:v1.4.9 is superceded by com.konghq.unirest-java:v3.10.00
+
+######  Source Partitions, Source Offset
+Confluent connector is stateless so its state is stored in kafka specific topics
+
+Source partition and Source offset stores where your connector tracks which data it processes
+*source offset* is about the timestamp of last read data
+*Source partition*: is the set of params values which form a unique stream of data
+
+e.g.  for githubConnector :
+* source partition : { github_owner, gihub_repo}
+* source offset :  { last_called_message_timestamp}
+
+class `GitHubSourceTask` has:
+```
+* method  `private Map<String, String> sourcePartition()`
+* method ` private Map<String, String> sourceOffset(Instant updatedAt) `
+```
+those are used in  `private SourceRecord generateSourceRecord(Issue issue)`
+
+######  Source Task
+
+class `GitHubSourceTask`   this class does the actual job  , implements:
+```
+* public String version()
+* public void start(Map<String,String> map)
+	* initialise source offset and source partition 	
+* public List<SourceRecord> poll()  throws InterruptedException  // main method
+	* calls httpClient,  creates an Array of source records  
+	* loops of issues and foreach creates a SourceRecord  		
+* public void stop()
+```
+class `GitHubSourceTaskTest`
+tests the httpClient call and getting a list of issues
+
+###  Deploy connector
+##### Deploy connnector on standalone mode
+```bash
+mvn clean package
+./run.sh
+```
+which does 
+```
+##include project dependency jars in $ClassPath
+export CLASSPATH="$(find target/ -type f -name '*.jar'| grep '\-package' | tr '\n' ':')"
+
+##build docker image using Dockerfile in the project folder
+docker build . -t simplesteph/kafka-connect-source-github:1.0
+
+#run this docker image with offsets mounted as volume
+docker run --net=host --rm -t \
+ -v /tmp/offsets:/kafka-connect-source-github/offsets \
+ simplesteph/kafka-connect-source-github:1.0
+##NB you need to have kafka cluster running
+## start it by running docker-compose up in the project folder
+```
+make sure  that config folder  has  GitHubSourceConnectorExample.properties and worker.properties
+
+Observe in logs that connector runs
+
+open kafdrop  at  http://localhost:9000   and observe messages in  `github-issues` kafka topic   written by connector.
+
+
+##### Deploy connnector on landoop cluster
 
 start a landoop docker image with your connector mapped as a volume
 
 ```
-docker run -it --rm -p 2181:2181 -p 3030:3030 -p 8081:8081 -p 8082:8082 -p 8083:8083 -p 9092:9092 -e ADV_HOST=127.0.0.1 -e RUNTESTS=0 -v ~/repos/slzdevsnp/clearn/stream/kafka/kafka-connect-maarek/szi/ch8-writeconnector/kafka-connect-github/target/kafka-connect-project-1.0-SNAPSHOT-package/share/java/kafka-connect-project:/connectors/GitHub landoop/fast-data-dev
+docker run -it --rm -p 2181:2181 -p 3030:3030 -p 8081:8081 -p 8082:8082 -p 8083:8083 -p 9092:9092 -e ADV_HOST=127.0.0.1 -e RUNTESTS=0 -v ~/repos/clearn/stream/kafka/kafka-connect-maarek/szi/ch8-writeconnector/tutorial-connect-github-project/target/tutorial-connect-github-project-1.0-SNAPSHOT-package/share/java/tutorial-connect-github-project:/connectors/GitHub landoop/fast-data-dev
 ```
 goto landoop ui  at http://localhost:3030   click on browse logs -> connect-distributed.log
 goto connectors New : GitHubSourceConnector
