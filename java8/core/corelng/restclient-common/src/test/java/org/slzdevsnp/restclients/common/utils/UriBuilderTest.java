@@ -5,6 +5,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.Test;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Arrays;
 
 import static org.hamcrest.Matchers.*;
@@ -20,9 +22,11 @@ public class UriBuilderTest {
     @Test
     public void shouldHandleNullValuesAndParam() {
         UriBuilder builder = UriBuilder.url(
-                "https://api.wattsight.com/api/instances/tagged/1"
+                "https://api.wattsight.com/api/instances"
         )
                 .param("tag", null);
+        String b = builder.build();
+        assertThat(b, is("https://api.wattsight.com/api/instances?"));
 
     }
 
@@ -82,4 +86,14 @@ public class UriBuilderTest {
         assertThat(b, is("http://www.google.com?"));
     }
 
+    @Test
+    public void shouldHandleDateValues() {
+        String b = UriBuilder.url("http://www.google.com")
+                .param("from", ZonedDateTime.of(2021,1,1,
+                        0,0,0,0, ZoneId.of("Z")))
+                .param("to", ZonedDateTime.of(2021,1,2,
+                        23,59,59,0, ZoneId.of("Z")))
+                .build();
+        assertThat(b, is("http://www.google.com?from=2021-01-01T00:00:00.000Z&to=2021-01-02T23:59:59.000Z"));
+    }
 }

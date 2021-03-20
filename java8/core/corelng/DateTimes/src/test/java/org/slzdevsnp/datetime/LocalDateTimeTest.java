@@ -43,6 +43,20 @@ public class LocalDateTimeTest {
         assertThat(dt, isA(LocalDateTime.class));
 
     }
+    @Test
+    public void shouldParsePointConnectMetaString() {
+        final String dtstr = "2020-10-21 09:37:06";
+
+        DateTimeFormatter formatter
+                = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime  dt = LocalDateTime.parse(dtstr, formatter);
+        ZonedDateTime  zdt = dt.atZone(ZoneId.of("Z"));
+        System.out.println("dt: " +dt.format(formatter));
+        System.out.println("zdt: " + zdt);
+        assertThat(dt, isA(LocalDateTime.class));
+
+    }
+
 
     @Test
     public void testFormattedZonedNow(){

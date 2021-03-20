@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
@@ -36,6 +37,19 @@ public class TestFileReadWrite {
 
         System.out.println("abs path: " + file.getAbsolutePath());
         System.out.println(" file size " +file.length() );
+    }
+
+    @Test
+    void shouldWriteStringToFile() throws IOException {
+        String contents = "mama myla syna\npapa kushal kashu\n";
+        File file = File.createTempFile("szi", ".dat");
+        FileWriter writer = new FileWriter(file);
+        writer.write(contents);
+        writer.close();
+        System.out.println("file canonical path: " + file.getCanonicalPath());
+        assertThat(file.exists(), is(true));
+        assertThat(file.length(), greaterThan(0L));
+        //file.deleteOnExit(); //uncomment to check file contents  delete on jvm exit , test termination
     }
 
     @Test

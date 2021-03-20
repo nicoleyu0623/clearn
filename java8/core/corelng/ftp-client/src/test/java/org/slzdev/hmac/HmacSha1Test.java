@@ -39,5 +39,5 @@ public class HmacSha1Test {
          return toHexString(mac.doFinal(data.getBytes()));
      }
  }
- 
+
 }

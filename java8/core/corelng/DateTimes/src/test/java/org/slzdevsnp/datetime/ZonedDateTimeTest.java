@@ -64,6 +64,15 @@ public class ZonedDateTimeTest {
     }
 
     @Test
+    void givenStringZutcParseZonedDateTimeAlt() {
+        String sdt = "2021-03-15T08:28:02.826Z";
+        ZonedDateTime zdt = ZonedDateTime.parse(sdt,DateTimeFormatter.ISO_ZONED_DATE_TIME);
+        System.out.println(zdt);
+    }
+
+
+
+    @Test
     public void testParsingDateTimeOffsetPlus_Alt() {
         String dtstr = "2020-03-03T00:00:00.009+01:00";
         //  DateTimeFormatter.ISO_ZONED_DATE_TIME  is used by default
