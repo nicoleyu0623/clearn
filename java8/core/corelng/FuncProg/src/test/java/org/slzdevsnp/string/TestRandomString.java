@@ -24,7 +24,7 @@ public class TestRandomString {
             randomString += chars.substring(randomInt,randomInt+1);
         }
         System.out.println("rs: " +randomString);
-        int x = Integer.valueOf(randomString).intValue();
+
         assertThat(randomString.length(), is(stringLength));
     }
 
