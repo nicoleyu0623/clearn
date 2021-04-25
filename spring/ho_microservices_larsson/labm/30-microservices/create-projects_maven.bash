@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-mkdir microservices_m
-cd microservices_m
 
 ## all spring projects will be created in microservices folder
 spring init \
@@ -52,4 +50,3 @@ spring init \
 --version=1.0.0-SNAPSHOT \
 product-composite-service
 
-cd ..

@@ -21,6 +21,7 @@ target/
 !**/src/test/**
 
 #gradle
+HELP.md
 .gradle
 **/build/
 !src/**/build/

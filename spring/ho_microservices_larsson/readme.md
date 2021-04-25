@@ -6,3 +6,5 @@ https://github.com/PacktPublishing/Hands-On-Microservices-with-Spring-Boot-and-S
 
 ch3: build 3 microservices
 gradle  idea project  ho_microservices_larsson/labg/30-microservices/2-basic-rest-services
+maven idea project ho_microservices_larsson/labm/ho-parent  module  30-microservices
+
