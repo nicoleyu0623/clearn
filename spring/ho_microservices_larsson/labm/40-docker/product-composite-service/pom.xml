@@ -10,19 +10,19 @@
 
 
 	<parent>
-		<groupId>se.magnus.microservices</groupId>
-		<artifactId>40-docker</artifactId>
+		<groupId>se.magnus.ch4</groupId>
+		<artifactId>microservices</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>se.magnus.microservices</groupId>
+			<groupId>se.magnus.ch4</groupId>
 			<artifactId>util</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>se.magnus.microservices</groupId>
+			<groupId>se.magnus.ch4</groupId>
 			<artifactId>api</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
