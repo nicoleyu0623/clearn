@@ -273,23 +273,13 @@
         <lombok.version>1.18.8</lombok.version>
         <jakarta-json.version>1.1.6</jakarta-json.version>
         <jackson.version>2.10.5</jackson.version>
-
-        <!-- aws sdk -->
         <awssdk.version>2.16.20</awssdk.version>
-
-        <!--  apache commons  -->
         <commons-lang3.version>3.7</commons-lang3.version>
-
-        <!-- logging -->
         <org.slf4j.version>1.7.30</org.slf4j.version>
         <log4j2.version>2.13.1</log4j2.version>
-
         <logback.version>1.2.3</logback.version>
-
         <orika.version>1.5.4</orika.version>
-
         <commons.codec.version>1.2</commons.codec.version>
-
         <!-- testing -->
         <junit-platform.version>1.2.0</junit-platform.version>
         <junit-jupiter.version>5.2.0</junit-jupiter.version>
@@ -302,14 +292,12 @@
         <hamcrest-all.version>1.3</hamcrest-all.version>
         <mockito.version>3.3.0</mockito.version>
         <byte-buddy.version>1.10.5</byte-buddy.version>
-
         <!-- plugins -->
         <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 
 
     </properties>
-
 
     <build>
         <plugins>
