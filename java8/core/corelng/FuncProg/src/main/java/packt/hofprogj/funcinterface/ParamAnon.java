@@ -1,4 +1,4 @@
-package packt.hofprogj.finterface;
+package packt.hofprogj.funcinterface;
 
 interface Parameter{
     int operation(int a, int b);

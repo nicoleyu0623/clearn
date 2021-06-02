@@ -1,4 +1,4 @@
-package packt.hofprogj.finterface;
+package packt.hofprogj.funcinterface;
 
 //classic intface definition
 interface Hello {

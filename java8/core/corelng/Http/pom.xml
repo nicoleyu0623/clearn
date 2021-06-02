@@ -89,15 +89,7 @@
             <version>${com.squareup.okhttp3.version}</version>
             <scope>test</scope>
         </dependency>
-<!--
 
-        <dependency>
-            <groupId>com.mashape.unirest</groupId>
-            <artifactId>unirest-java</artifactId>
-            <version>${unirest.version}</version>
-        </dependency>
-
--->
         <!-- javalin -->
         <dependency>
             <groupId>io.javalin</groupId>
@@ -132,6 +124,11 @@
             <version>${konghq-unirest.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <scope>test</scope>
+        </dependency>
 
 
     </dependencies>
