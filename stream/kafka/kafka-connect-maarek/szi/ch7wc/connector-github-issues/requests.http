@@ -1,0 +1,43 @@
+### Gets all connectors setup in connect
+GET http://localhost:8083/connectors?expand=info&expand=status
+Content-Type: application/json
+
+### Gets all connector-plugins setup in connect
+GET http://localhost:8083/connector-plugins
+Content-Type: application/json
+
+###
+# GitHubSourceConnector
+###
+
+DELETE  http://localhost:8083/connectors/github-issues-connector
+
+### Register a new Wattsight Connector with Kafka Connect
+POST http://localhost:8083/connectors
+Content-Type: application/json
+
+{
+  "name": "github-issues-connector",
+  "config": {
+    "connector.class": "org.szi.kafka.GitHubSourceConnector",
+    "tasks.max": "1",
+    "topic": "github-issues",
+    "github.owner": "kubernetes",
+    "github.repo":"kubernetes",
+    "since.timestamp":"2019-01-01T00:00:00Z"
+  }
+}
+
+### Status
+
+GET http://localhost:8083/connectors/github-issues-connector/status
+Content-Type: application/json
+
+### Pause the connector
+PUT http://localhost:8083/connectors/github-issues-connector/pause
+Content-Type: application/json
+
+### Resume the Connector
+PUT http://localhost:8083/connectors/github-issues-connector/resume
+Content-Type: application/json
+
