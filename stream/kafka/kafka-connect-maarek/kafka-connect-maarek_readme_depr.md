@@ -281,7 +281,7 @@ select count(*) from "public"."demo-3-twitter" limit 10;
 ```
 if the source is running the count of messages in the table will be increasing
 
-## Ch8 writing kafka connector GitHubSourceConnector
+## Ch7 writing kafka connector GitHubSourceConnector
 #### Plan
 * * Dependencies
 * ConfigDef

@@ -16,6 +16,7 @@ import software.amazon.awssdk.services.sqs.model.*;
 
 referenced at https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/examples-sqs-message-queues.html
 
+expected to have a valid login credentials  (aws_metis_login ) //did not work on 20201-06-07
 */
 
 @Slf4j
@@ -28,9 +29,9 @@ public class SQSExample {
                 .region(Region.EU_CENTRAL_1)
                 .credentialsProvider(ProfileCredentialsProvider.create("default"))
                 .build();
-        //listQueues(sqsClient);
-        String qUrl = getQueueUrl(sqsClient,"metis-pointconnect-pcns");
-        log.info("fetched qUrl - {}",qUrl);
+        listQueues(sqsClient);
+        /*String qUrl = getQueueUrl(sqsClient,"metis-pointconnect-pcns");
+        log.info("fetched qUrl - {}",qUrl);*/
     }
 
     public static String getQueueUrl(SqsClient sqsClient, String queueName) {
@@ -51,7 +52,7 @@ public class SQSExample {
 
     public static void listQueues(SqsClient sqsClient) {
 
-        System.out.println("\nList Queues");
+        System.out.println("\n ### List Queues");
 
         String prefix = "metis";
 
@@ -60,7 +61,7 @@ public class SQSExample {
             ListQueuesResponse listQueuesResponse = sqsClient.listQueues(listQueuesRequest);
 
             for (String url : listQueuesResponse.queueUrls()) {
-                System.out.println(url);
+                System.out.println("#### " + url);
             }
 
         } catch (SqsException e) {
