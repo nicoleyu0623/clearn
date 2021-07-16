@@ -10,6 +10,8 @@
     <modules>
         <module>m2-intro-java-abstraction</module>
         <module>m3-need4abstraction</module>
+        <module>m5-impl-interfaces-modules</module>
+        <module>m6-recognize-danger</module>
     </modules>
 
     <dependencyManagement>

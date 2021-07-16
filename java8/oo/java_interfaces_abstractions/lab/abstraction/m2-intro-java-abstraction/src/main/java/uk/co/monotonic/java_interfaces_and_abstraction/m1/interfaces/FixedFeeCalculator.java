@@ -4,7 +4,7 @@ import uk.co.monotonic.java_interfaces_and_abstraction.m1.ClientEngagement;
 
 public class FixedFeeCalculator implements RevenueCalculator
 {
-    public static final double STANDARD_FEE = 500;
+    public static final double STANDARD_FEE = 501;
 
     private final double fee;
 
