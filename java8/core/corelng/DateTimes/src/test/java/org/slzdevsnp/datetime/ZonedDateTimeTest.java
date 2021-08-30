@@ -192,4 +192,34 @@ public class ZonedDateTimeTest {
         LocalDateTime ldt = ld.atStartOfDay();
         ZonedDateTime zdt = ldt.atZone(ZoneId.of("CET"));
     }
+
+    @Test
+    public void shouldGetTodayDateAtZone(){
+
+        ZonedDateTime zdt1 = ZonedDateTime.parse("2021-08-29T23:00:00Z",
+                DateTimeFormatter.ISO_ZONED_DATE_TIME);
+        ZonedDateTime zdt2 = ZonedDateTime.parse("2021-08-30T01:00:00+02:00",
+                DateTimeFormatter.ISO_ZONED_DATE_TIME);
+        LocalDate ld1 = zdt1.toLocalDate();
+        LocalDate ld2 = zdt2.toLocalDate();
+        System.out.println("zdt1 now:  " + zdt1 + " localdate: " + ld1);
+        System.out.println("zd2 now:  " + zdt2 + " localdate: " + ld2);
+
+        //so a correct way to get today in a zone will be
+        /*
+            ZonedDateTime ztoday = ZonedDateTime.now(ZoneId.of("CET"));
+            LocalDate ldtoday = zdt.toLocalDate();
+            ZonedDateTime ztodayAtStart= ldtoday.atStartOfDay(ZoneId.of("CET"));
+         */
+
+        assertThat(zdt1.format(DateTimeFormatter.ISO_ZONED_DATE_TIME),
+                is("2021-08-29T23:00:00Z"));
+        assertThat(zdt2.format(DateTimeFormatter.ISO_ZONED_DATE_TIME),
+                is("2021-08-30T01:00:00+02:00"));
+        assertThat(ld1, not(ld2));
+        assertThat(ld1, is(LocalDate.of(2021,8,29)));
+        assertThat(ld2, is(LocalDate.of(2021,8,30)));
+
+    }
+
 }
