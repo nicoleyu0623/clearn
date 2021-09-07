@@ -65,7 +65,7 @@ class AccountOpeningServiceTest {
         assertThrows(IOException.class, () -> underTest.openAccount(FIRST_NAME, LAST_NAME, TAX_ID, DOB));
     }
 
-    @Test
+    @Test  /* throwning  a RunTime Exception */
     public void shouldThrowIfReferenceIdsManagerThrows() throws IOException {
         when(backgroundCheckService.confirm(FIRST_NAME, LAST_NAME, TAX_ID, DOB))
                 .thenReturn(new BackgroundCheckResults("something_not_unacceptable", 100));
@@ -74,7 +74,7 @@ class AccountOpeningServiceTest {
         assertThrows(RuntimeException.class, () -> underTest.openAccount(FIRST_NAME, LAST_NAME, TAX_ID, DOB));
     }
 
-    @Test
+    @Test  /* runtime exeption if  there is a failure to save in repository   */
     public void shouldThrowIfAccountRepositoryThrows() throws IOException {
         final BackgroundCheckResults backgroundCheckResults = new BackgroundCheckResults("something_not_unacceptable", 100);
         when(backgroundCheckService.confirm(FIRST_NAME, LAST_NAME, TAX_ID, DOB))
