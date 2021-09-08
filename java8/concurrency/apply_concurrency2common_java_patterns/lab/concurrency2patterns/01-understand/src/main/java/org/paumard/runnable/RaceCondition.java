@@ -11,6 +11,7 @@ class RaceCondition {
 		Runnable r = () -> {
 			
 			for (int i = 0 ; i < 1_000 ; i++) {
+				/*  if incrementValue() is not wrapped in synchronized, then no guarantyee to have 1E6 final result  */
 				longWrapper.incrementValue();
 			}
 		};

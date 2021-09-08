@@ -13,12 +13,15 @@ public class LongWrapper {
 		synchronized (key) {
 			return l;
 		}
+		//non-synchronized
+		//return l;
 	}
 
 	public void incrementValue() {
 		synchronized (key) {
 			l+=1; //this is a read and write operation
 		}
-		//l+=1;
+		// non-synchronized
+		/*l+=1; */
 	}
 }
