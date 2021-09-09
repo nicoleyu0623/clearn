@@ -8,6 +8,7 @@
 
     <modules>
         <module>01_executors-futures</module>
+        <module>02_Locks</module>
     </modules>
 
 </project>
