@@ -114,7 +114,7 @@ public class TestJacksonTutorialspoint {
     }
 
     @Test
-    void testMarshallSerializeToJson() throws JsonProcessingException {
+    void testUnmarshallSerializeToJson() throws JsonProcessingException {
         ObjectMapper  mapper =  TestJacksonTutorialspoint.createObjectMapper();
         Student stud1 =  new Student("Lucas", 21);
         Student stud2 = new Student("Michael", 22);
