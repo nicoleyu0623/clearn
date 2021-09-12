@@ -9,6 +9,7 @@
     <modules>
         <module>01_executors-futures</module>
         <module>02_Locks</module>
+        <module>03_Barrier</module>
     </modules>
 
 </project>

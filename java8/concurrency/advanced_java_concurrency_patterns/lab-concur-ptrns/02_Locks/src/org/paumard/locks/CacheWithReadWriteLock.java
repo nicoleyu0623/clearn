@@ -60,7 +60,7 @@ public class CacheWithReadWriteLock {
 		
 		try  {
 			for (int i = 0; i < 4; i++) {
-				executorService.submit(new Producer());
+				executorService.submit(new Producer()); //4 threads
 			}
 		} finally {
 			executorService.shutdown();
