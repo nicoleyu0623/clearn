@@ -15,6 +15,7 @@ public class AtomicCounterInitial {
     //shared varialbe
     //private static int counter = 0; //unsafe version
     private static AtomicInteger counter = new AtomicInteger(0); //safe version
+
     public static void main(String[] args) {
 
         class Incrementer implements  Runnable{
@@ -23,7 +24,7 @@ public class AtomicCounterInitial {
 
             public void run(){
                 for (int i =0 ; i < maxIter ; i++){
-                   // counter++;  //unsafe version
+                    //counter++;  //unsafe version
                     counter.incrementAndGet(); //safe version
                 }
             }

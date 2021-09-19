@@ -10,6 +10,8 @@
         <module>01_executors-futures</module>
         <module>02_Locks</module>
         <module>03_Barrier</module>
+        <module>04_AtomicCounter</module>
+        <module>05_ConcurrentQueuesAndMaps</module>
     </modules>
 
 </project>
