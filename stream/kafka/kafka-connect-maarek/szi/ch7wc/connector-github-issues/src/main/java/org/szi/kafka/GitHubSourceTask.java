@@ -13,7 +13,7 @@ import org.szi.kafka.utils.DateUtils;
 
 import java.time.Instant;
 import java.util.*;
-import static org.szi.kafka.GitHubSchemas.*;
+import static org.szi.kafka.GitHubSchemas.*;  //imports static strings
 
 
 public class GitHubSourceTask extends SourceTask {
@@ -36,9 +36,10 @@ public class GitHubSourceTask extends SourceTask {
     public void start(Map<String, String> map) {
         //Do things here that are required to start your task. This could be open a connection to a database, etc.
         config = new GitHubSourceConnectorConfig(map);
-        initializeLastVariables();
+        initializeLastVariables(); // called  once  each connector's restart
         gitHubHttpAPIClient = new GitHubAPIHttpClient(config);
     }
+
 
     private void initializeLastVariables(){
         Map<String, Object> lastSourceOffset = null;
@@ -51,17 +52,25 @@ public class GitHubSourceTask extends SourceTask {
         } else {
             // read variables, parse them to their expected types
             Object updatedAt = lastSourceOffset.get(UPDATED_AT_FIELD);
-            Object issueNumber = lastSourceOffset.get(NUMBER_FIELD);
+            Object issueNumber = lastSourceOffset.get(NUMBER_FIELD);  //expect to alway be null as it is not defined in SourceOffset
             Object nextPage = lastSourceOffset.get(NEXT_PAGE_FIELD);
             if(updatedAt != null && (updatedAt instanceof String)){
-                nextQuerySince = Instant.parse((String) updatedAt);
+                nextQuerySince = Instant.parse((String) updatedAt);  // need for client query
             }
             if(issueNumber != null && (issueNumber instanceof String)){
                 lastIssueNumber = Integer.valueOf((String) issueNumber);
             }
-            if (nextPage != null && (nextPage instanceof String)){
+            if (nextPage != null && (nextPage instanceof String)){ //need for client query
                 nextPageToVisit = Integer.valueOf((String) nextPage);
             }
+        }
+        log.debug("initialized lastIssueNumber - {}",lastIssueNumber); //expect to be null
+        //log offset
+        if(lastSourceOffset != null){
+            lastSourceOffset.entrySet().stream()
+                    .forEach(e ->  log.info("lastSourceOffset key: {}  value: {}",e.getKey(),e.getValue()));
+        }else{
+            log.debug("lastSourceOffset is null, the very first run");
         }
     }
 
@@ -86,11 +95,11 @@ public class GitHubSourceTask extends SourceTask {
             lastUpdatedAt = issue.getUpdatedAt(); //reassign at each iteration
         }
         if (i > 0) log.info(String.format("Fetched %s record(s)", i));
-        if (i == 100 ){  // config.getBatchSize().intValue()
+        if (i == config.getBatchSize() ){  // config.getBatchSize().intValue()
             // we have reached a full batch, we need to get the next one
             nextPageToVisit += 1;
         }
-        else {
+        else {  //when a since Param gets updates
             nextQuerySince = lastUpdatedAt.plusSeconds(1);
             nextPageToVisit = 1;
             gitHubHttpAPIClient.sleep();
@@ -129,6 +138,7 @@ public class GitHubSourceTask extends SourceTask {
         map.put(NEXT_PAGE_FIELD, nextPageToVisit.toString());
         return map;
     }
+
 
     private Struct buildRecordKey(Issue issue){
         // Key Schema

@@ -2,4 +2,4 @@
 
 
 docker build -t kafka-connect-szi-local \
-  -f Dockerfile-1 .
+  -f Dockerfile-dip .

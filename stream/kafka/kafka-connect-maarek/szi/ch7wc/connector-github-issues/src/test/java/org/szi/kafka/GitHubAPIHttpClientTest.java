@@ -35,7 +35,7 @@ public class GitHubAPIHttpClientTest {
         baseProps.put(OWNER_CONFIG, "kubernetes");
         baseProps.put(REPO_CONFIG, "kubernetes");
         baseProps.put(SINCE_CONFIG, "2018-01-01T01:23:45Z");
-        baseProps.put(BATCH_SIZE_CONFIG, "2");
+        baseProps.put(BATCH_SIZE_CONFIG, "2"); //2 entries per page
         baseProps.put(TOPIC_CONFIG, "github-issues");
         return baseProps;
     }
@@ -48,4 +48,5 @@ public class GitHubAPIHttpClientTest {
         assertThat(array.length(), is(2));
         log.debug("array: - {}",array.toString());
     }
+
 }
