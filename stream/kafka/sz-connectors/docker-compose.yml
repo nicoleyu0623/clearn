@@ -44,7 +44,7 @@ services:
 
 
   connect:
-    image: kafka-connect-szi-local:latest
+    image: kafka-connect-sz-connectors-local:latest
     hostname: connect
     container_name: connect
     depends_on:
